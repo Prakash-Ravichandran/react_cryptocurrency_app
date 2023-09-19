@@ -1,11 +1,17 @@
 import React from "react";
+import { Navbar } from "./components";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
   return (
     <React.Fragment>
-      <div className="navbar"></div>
-      <div className="main"></div>
-      <div className="footer"></div>
+      <BrowserRouter>
+        <div className="navbar">
+          <Navbar />
+        </div>
+        <div className="main"></div>
+        <div className="footer"></div>
+      </BrowserRouter>
     </React.Fragment>
   );
 };
