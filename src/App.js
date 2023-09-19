@@ -1,13 +1,12 @@
 import React from "react";
 
-import React from "react";
-
 const App = () => {
   return (
     <React.Fragment>
-      <h2>Cryptoverse</h2>
+      <div className="navbar"></div>
+      <div className="main"></div>
+      <div className="footer"></div>
     </React.Fragment>
   );
 };
-
 export default App;
