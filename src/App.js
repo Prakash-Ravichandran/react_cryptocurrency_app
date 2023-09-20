@@ -44,9 +44,9 @@ const App = () => {
                 </Routes>
               </div>
             </Layout>
+            <div className="footer"></div>
           </div>
         </div>
-        <div className="footer"></div>
       </BrowserRouter>
     </React.Fragment>
   );
