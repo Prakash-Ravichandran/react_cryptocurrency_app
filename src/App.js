@@ -9,7 +9,7 @@ import {
 } from "./components";
 
 import { Routes, Route, Link, BrowserRouter, Router } from "react-router-dom";
-import { Layout } from "antd";
+import { Layout, Space, Typography } from "antd";
 import "./App.css";
 
 const App = () => {
@@ -44,7 +44,22 @@ const App = () => {
                 </Routes>
               </div>
             </Layout>
-            <div className="footer"></div>
+            <div className="footer">
+              <Typography.Title
+                level={5}
+                style={{ color: "white", textAlign: "center" }}
+              >
+                <Link to="/">
+                  Cryptoverse <br />
+                </Link>
+                All Rights Reserved
+              </Typography.Title>
+              <Space>
+                <Link to="/">Home</Link>
+                <Link to="/exchanges">Exhanges</Link>
+                <Link to="/news">News</Link>
+              </Space>
+            </div>
           </div>
         </div>
       </BrowserRouter>
