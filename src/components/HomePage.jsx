@@ -10,6 +10,7 @@ const { Title } = Typography;
 
 const HomePage = () => {
   const { data, isFetching } = useGetCrytoMarketsQuery();
+  console.log(data);
   const globalStats = data?.data?.stats;
 
   if (isFetching) return "Loading ....";
@@ -56,7 +57,7 @@ const HomePage = () => {
           <Link to="/cryptocurrencies">Show More</Link>
         </Title>
       </div>
-      <Cryptocurrencies simplified />
+      <Cryptocurrencies />
       <div className="home-heading-container">
         <Title level={2} className="home-title">
           Latest Crypto News

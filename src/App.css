@@ -375,3 +375,21 @@ a:hover {
   padding: 20px;
   align-items: center;
 }
+
+img {
+  width: 100%;
+  max-width: 30px;
+  border-radius: 8px;
+}
+
+.card {
+  height: 100%;
+  max-height: 215px;
+}
+.card-header-wrapper {
+}
+
+.ant-card-head {
+  height: 100%;
+  max-height: 40px;
+}
