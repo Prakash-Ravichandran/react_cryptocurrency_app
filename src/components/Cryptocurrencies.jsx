@@ -7,17 +7,14 @@ import millify from "millify";
 
 const { Title } = Typography;
 
-const Crytocurrencies = () => {
-  const { data: cryptoList, isFetching } = useGetCrytoMarketsQuery();
+const Crytocurrencies = ({ simplified }) => {
+  const count = simplified ? 10 : 100;
+  const { data: cryptoList, isFetching } = useGetCrytoMarketsQuery(count);
   const [cryptos, setcryptoList] = useState(cryptoList?.data?.coins);
   console.log(cryptos);
 
-  var coins = cryptoList?.data?.coins;
+  if (isFetching) return "Loading ...";
 
-  console.log(coins.length);
-  console.log(Array.isArray(coins));
-
-  console.log(coins[0].price);
   return (
     <>
       <Row gutter={[32, 32]} className="crypto-card-container">
@@ -35,6 +32,7 @@ const Crytocurrencies = () => {
                       hoverable
                     />
                   }
+                  key={currency.id}
                 >
                   <p>Price: {millify(currency.price)}</p>
                   <p>Market Cap: {millify(currency.marketCap)}</p>

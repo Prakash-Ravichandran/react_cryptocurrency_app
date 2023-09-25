@@ -9,7 +9,7 @@ import News from "./News";
 const { Title } = Typography;
 
 const HomePage = () => {
-  const { data, isFetching } = useGetCrytoMarketsQuery();
+  const { data, isFetching } = useGetCrytoMarketsQuery(10);
   console.log(data);
   const globalStats = data?.data?.stats;
 
@@ -20,30 +20,35 @@ const HomePage = () => {
         Global Crypto Statistics
       </Title>
       <Row gutter={[32, 32]}>
-        <Col lg={6}>
+        <Col span={12}>
           <Statistic
-            span={12}
             title="Total Cryptocurrencies"
             value={globalStats && globalStats.total}
           ></Statistic>
-
+        </Col>
+        <Col span={12}>
           <Statistic
-            span={12}
             title="Total Exchanges"
             value={millify(globalStats && globalStats.totalExchanges)}
           ></Statistic>
+        </Col>
+        <Col span={12}>
           <Statistic
-            span={12}
             title="Total Market Cap"
             value={`$${millify(globalStats && globalStats.totalMarketCap)}`}
           ></Statistic>
+        </Col>
+        <Col span={12}>
           <Statistic
-            span={12}
             title="Total 24h Volume"
             value={`$${millify(globalStats && globalStats.total24hVolume)}`}
           ></Statistic>
+        </Col>
+        <Col span={12}>
+          <Statistic title="Total Cryptocurrencies" value={globalStats.total} />
+        </Col>
+        <Col span={12}>
           <Statistic
-            span={12}
             title="Total Markets"
             value={globalStats && globalStats.totalMarkets}
           ></Statistic>
@@ -57,7 +62,7 @@ const HomePage = () => {
           <Link to="/cryptocurrencies">Show More</Link>
         </Title>
       </div>
-      <Cryptocurrencies />
+      <Cryptocurrencies simplified />
       <div className="home-heading-container">
         <Title level={2} className="home-title">
           Latest Crypto News
