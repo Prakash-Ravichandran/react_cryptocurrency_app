@@ -394,7 +394,7 @@ img {
 
 .search-crypto > input {
   border: 3px solid #00b4cc;
-  border-radius: 5px 0 0 5px;
+  border-radius: 5px;
   color: #000000;
   padding: 10px;
   outline: none;
