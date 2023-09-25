@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
 import { useState } from "react";
 import { Typography, Card, Row, Col, Input } from "antd";
@@ -10,13 +10,29 @@ const { Title } = Typography;
 const Crytocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
   const { data: cryptoList, isFetching } = useGetCrytoMarketsQuery(count);
-  const [cryptos, setcryptoList] = useState(cryptoList?.data?.coins);
+
+  const [cryptos, setcryptos] = useState();
+  const [searchTerm, setSearchTerm] = useState("");
+
   console.log(cryptos);
+
+  useEffect(() => {
+    const filteredData = cryptoList?.data?.coins.filter((coin) =>
+      coin.name.toLowerCase().match(searchTerm.toLocaleLowerCase())
+    );
+    setcryptos(filteredData);
+  }, [cryptoList, searchTerm]);
 
   if (isFetching) return "Loading ...";
 
   return (
     <>
+      <div className="search-crypto">
+        <input
+          placeholder="search-cryptocurrency"
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
       <Row gutter={[32, 32]} className="crypto-card-container">
         {cryptos?.map((currency) => {
           return (
