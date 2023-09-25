@@ -19,8 +19,8 @@ const HomePage = () => {
       <Title level={2} className="heading">
         Global Crypto Statistics
       </Title>
-      <Row>
-        <Col>
+      <Row gutter={[32, 32]}>
+        <Col lg={6}>
           <Statistic
             span={12}
             title="Total Cryptocurrencies"
