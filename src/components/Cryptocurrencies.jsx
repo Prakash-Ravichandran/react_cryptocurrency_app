@@ -20,7 +20,7 @@ const Crytocurrencies = () => {
   console.log(coins[0].price);
   return (
     <>
-      <Row gutters={[32, 32]} className="crypto-card-container">
+      <Row gutter={[32, 32]} className="crypto-card-container">
         {cryptos?.map((currency) => {
           return (
             <Col xs={24} sm={12} lg={6} key={currency.id}>
