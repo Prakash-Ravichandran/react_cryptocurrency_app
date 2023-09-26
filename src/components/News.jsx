@@ -21,7 +21,7 @@ const News = ({ simplified }) => {
   return (
     <>
       <h1>News</h1>
-      <h2>{value[0].description}</h2>
+      <h2>{cryptoList?.value[0].description}</h2>
     </>
   );
 };
