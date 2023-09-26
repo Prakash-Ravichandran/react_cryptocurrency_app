@@ -1,11 +1,9 @@
 import React, { Fragment, useEffect } from "react";
 import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
 import { useState } from "react";
-import { Typography, Card, Row, Col, Input } from "antd";
+import { Card, Row, Col } from "antd";
 import { Link } from "react-router-dom";
 import millify from "millify";
-
-const { Title } = Typography;
 
 const Crytocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
@@ -18,7 +16,7 @@ const Crytocurrencies = ({ simplified }) => {
 
   useEffect(() => {
     const filteredData = cryptoList?.data?.coins.filter((coin) =>
-      coin.name.toLowerCase().match(searchTerm.toLocaleLowerCase())
+      coin.name.toLowerCase().match(searchTerm)
     );
     setcryptos(filteredData);
   }, [cryptoList, searchTerm]);
@@ -27,12 +25,15 @@ const Crytocurrencies = ({ simplified }) => {
 
   return (
     <>
-      <div className="search-crypto">
-        <input
-          placeholder="Search Cryptocurrency..."
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
+      {!simplified && (
+        <div className="search-crypto">
+          <input
+            placeholder="Search Cryptocurrency..."
+            onChange={(e) => setSearchTerm(e.target.value.toLocaleLowerCase())}
+          />
+        </div>
+      )}
+
       <Row gutter={[32, 32]} className="crypto-card-container">
         {cryptos?.map((currency) => {
           return (
