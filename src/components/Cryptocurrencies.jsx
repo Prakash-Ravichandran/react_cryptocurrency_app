@@ -46,7 +46,7 @@ const Crytocurrencies = ({ simplified }) => {
                     <img
                       className="crypto-image"
                       src={currency.iconUrl}
-                      hoverable
+                      hoverable="true"
                     />
                   }
                   key={currency.id}
