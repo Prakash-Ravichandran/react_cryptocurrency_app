@@ -1,9 +1,11 @@
 import { Card, Row, Col } from "antd";
-import { Typography, Avatar } from "antd";
+import { Typography, Avatar, Select } from "antd";
+import { Option } from "antd/es/mentions";
 import moment from "moment/moment";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
+import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
 
 const { Title, Text } = Typography;
 const demoImage =
@@ -15,6 +17,7 @@ const News = ({ simplified }) => {
     newsCategory,
     count: simplified ? 6 : 12,
   });
+  const { data } = useGetCrytoMarketsQuery(100);
   const value = newsList?.value;
 
   console.log(value);
@@ -23,6 +26,26 @@ const News = ({ simplified }) => {
   return (
     <>
       <Row gutter={[24, 24]} className="news-row">
+        {!simplified && (
+          <Col span={24}>
+            <Select
+              showSearch
+              className="select-news"
+              placeholder="Select a crypto"
+              optionFilterProp="children"
+              onChange={(value) => setNewsCategory(value)}
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase())
+              }
+            >
+              <Option value="crytpocurrency">Cryptocurrency</Option>
+              {data?.data?.coins.map((coin) => (
+                <Option value={coin.name}>{coin.name}</Option>
+              ))}
+            </Select>
+          </Col>
+        )}
+
         {value.map((newsItem, index) => {
           return (
             <Col xs={24} sm={12} lg={8} key={index}>
