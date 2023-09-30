@@ -38,7 +38,7 @@ const Crytocurrencies = ({ simplified }) => {
         {cryptos?.map((currency) => {
           return (
             <Col xs={24} sm={12} lg={6} key={currency.id}>
-              <Link to={`/crypto/${currency.id}`}>
+              <Link to={`/crypto/${currency.uuid}`}>
                 <Card
                   className="card"
                   title={`${currency.rank}.${currency.name}`}
