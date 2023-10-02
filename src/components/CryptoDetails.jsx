@@ -1,6 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useGetCryptoDetailsQuery } from "../services/cryptoMarketsApi";
+import {
+  useGetCryptoDetailsQuery,
+  useGetCryptoHistoryQuery,
+} from "../services/cryptoMarketsApi";
 import millify from "millify";
 import {
   MoneyCollectOutlined,
@@ -16,12 +19,17 @@ import {
 import { Typography, Statistic, Row, Col, Select } from "antd";
 import { Option } from "antd/es/mentions";
 import { useState } from "react";
+import LineChart from "./LineChart";
 const { Title, Text } = Typography;
 
 const CrytoDetails = () => {
   const { coinId } = useParams();
-  const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
-  const [timeperiod, setTimePeriod] = useState("7d");
+  const [timePeriod, setTimePeriod] = useState("7d");
+  const { data, isFetching } = useGetCryptoDetailsQuery(coinId); // API call
+  const { data: coinHistory } = useGetCryptoHistoryQuery({
+    coinId,
+    timePeriod,
+  }); // API call
   const cryptoDetails = data?.data?.coin;
 
   console.log(data);
@@ -99,6 +107,8 @@ const CrytoDetails = () => {
     },
   ];
 
+  if (isFetching) return "Loading...";
+
   return (
     <>
       <Col className="coin-detail-container">
@@ -120,13 +130,23 @@ const CrytoDetails = () => {
             <Option value={date}>{date}</Option>
           ))}
         </Select>
+        {
+          <LineChart
+            coinHistory={coinHistory}
+            currentPrice={millify(cryptoDetails?.price)}
+            coinName={cryptoDetails?.name}
+          />
+        }
         <Col className="stats-container">
           <Col className="coin-value-statistics">
             <Col className="coin-value-statistics-heading">
               <Title level={3} className="coin-details-heading">
                 {cryptoDetails?.name} value statistics
               </Title>
-              <p>An overview of all stats cryptocurrencies</p>
+              <p>
+                An overview of all stats {cryptoDetails?.name} , such as the
+                base and quote currency, the rank, and trading volume.
+              </p>
             </Col>
             {stats.map(({ title, value, icon }) => (
               <Col className="coin-stats">
@@ -137,6 +157,50 @@ const CrytoDetails = () => {
                 <Text className="stats">{value}</Text>
               </Col>
             ))}
+          </Col>
+          <Col className="other-stats-info">
+            <Col className="coin-value-statistics-heading">
+              <Title level={3} className="coin-details-heading">
+                Other statistics
+              </Title>
+              <p>
+                An overview showing the statistics of {cryptoDetails?.name},
+                such as the base and quote currency, the rank, and trading
+                volume.
+              </p>
+            </Col>
+            {genericStats.map(({ title, value, icon }) => (
+              <Col className="coin-stats">
+                <Col className="coin-stats-name">
+                  <Text>{icon}</Text>
+                  <Text>{title}</Text>
+                </Col>
+                <Text className="stats">{value}</Text>
+              </Col>
+            ))}
+          </Col>
+        </Col>
+        <Col className="coin-desc-link">
+          <Row className="coin-desc">
+            <Title level={3} className="coin-details-heading">
+              what is {cryptoDetails?.name} ?
+            </Title>
+            {cryptoDetails?.description}
+          </Row>
+          <Col className="coin-links">
+            <Title level={3} className="coin-details-heading">
+              {cryptoDetails?.name} Links
+            </Title>
+            {cryptoDetails?.links?.map((link) => {
+              return (
+                <Row className="coin-link" key={link.name}>
+                  <Title level={5} className="link-name">
+                    {link.type}
+                  </Title>
+                  <a href="">{link.name}</a>
+                </Row>
+              );
+            })}
           </Col>
         </Col>
       </Col>
