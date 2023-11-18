@@ -1,13 +1,11 @@
-import { Card, Row, Col } from "antd";
-import { Typography, Avatar, Select } from "antd";
-import { Option } from "antd/es/mentions";
+import { Avatar, Card, Col, Row, Select, Typography } from "antd";
 import moment from "moment/moment";
-import React, { useEffect } from "react";
-import { useState } from "react";
-import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
+import React, { useState } from "react";
 import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
+import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
 
 const { Title, Text } = Typography;
+const { Option } = Select;
 const demoImage =
   "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
 
@@ -20,7 +18,6 @@ const News = ({ simplified }) => {
   const { data } = useGetCrytoMarketsQuery(100);
   const value = newsList?.value;
 
-  console.log(value);
   if (isFetching) return "Loading ...";
 
   return (
@@ -46,7 +43,7 @@ const News = ({ simplified }) => {
           </Col>
         )}
 
-        {value.map((newsItem, index) => {
+        {value?.map((newsItem, index) => {
           return (
             <Col xs={24} sm={12} lg={8} key={index}>
               <Card>
