@@ -10,11 +10,12 @@ const Exchanges = () => {
 
   const rates = data?.data?.rates;
 
-  const obj = {};
+  const ratesArr = [];
 
   for (var key in rates) {
     // Console logs all the values in the objArr Array:
     console.log(key, rates[key]);
+    // rates.push({key, rates[key]});
   }
 
   // const keyValue = (input) =>
@@ -38,7 +39,26 @@ const Exchanges = () => {
       <Row>
         <Col>
           <Card>
-            <p>Hello</p>
+            <p>Static Value</p>
+            {/* {rates &&
+              Object.keys(rates).map((keyname, i) => (
+                <li key={i}>
+                  <span>
+                    {" "}
+                    key: {i}: Name: {keyname}
+                  </span>
+                </li>
+              ))} */}
+            {rates &&
+              Object.entries(rates).map(([coinName, Value], i) => {
+                return (
+                  <li key={i}>
+                    <span>
+                      {rates && coinName}: {rates && Value}
+                    </span>
+                  </li>
+                );
+              })}
           </Card>
         </Col>
       </Row>
