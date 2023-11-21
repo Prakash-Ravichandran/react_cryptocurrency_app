@@ -6,7 +6,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 //   "X-RapidAPI-Host": "bing-news-search1.p.rapidapi.com",
 // };
 
-const baseUrl = "https://api.coinpaprika.com/v1/exchanges";
+// const baseUrl = "https://api.coinpaprika.com/v1/exchanges";
+const baseUrl = "https://api.coinbase.com/v2/exchange-rates?currency=BTC";
 
 const createRequest = (url) => ({ url });
 
@@ -15,7 +16,8 @@ export const cryptoExchangesApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
     getCryptoExchanges: builder.query({
-      query: ({ exchanges_id }) => createRequest(`/binance`),
+      // query: ({ exchanges_id }) => createRequest(`/binance`),
+      query: () => createRequest(``),
     }),
   }),
 });
