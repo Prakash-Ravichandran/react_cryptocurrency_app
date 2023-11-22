@@ -1,4 +1,4 @@
-import { Col, Row, Select, Table } from "antd";
+import { Col, Row, Select, Table, Tag } from "antd";
 import Column from "antd/es/table/Column";
 import React, { useEffect, useState } from "react";
 import { useGetCryptoExchangesQuery } from "../services/cryptoExchangesApi";
@@ -7,15 +7,14 @@ import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
 const { Option } = Select;
 
 const Exchanges = () => {
-  // const currencyName = "AMD";
-  const dataSourceArr = [];
+  let dataSourceArr = [];
 
   const [currencyName, setCurrName] = useState("ETH");
-
+  const [country, setcountry] = useState();
   const { data: data } = useGetCryptoExchangesQuery({ currencyName });
   const { data: dropdownData } = useGetCrytoMarketsQuery(100);
   const { data: currencyDropdown } = useGetcryptoExIDApiQuery();
-  console.log(data);
+  console.log(currencyDropdown);
 
   const [dataSourceState, setDataSourceState] = useState([]);
   const rates = data?.data?.rates;
@@ -33,13 +32,20 @@ const Exchanges = () => {
     },
   ];
 
+  const tags = ["poor", "loser"];
+
   useEffect(() => {
     Object.entries(rates || {}).map(([coinName, exchange], i) => {
-      dataSourceArr.push({
-        key: i,
-        CURRENCY: coinName,
-        EXCHANGE: exchange,
-      });
+      dataSourceArr = [
+        ...dataSourceArr,
+        {
+          key: i,
+          CURRENCY: coinName,
+          EXCHANGE: exchange,
+          COUNTRY: "t",
+          TAGS: "H",
+        },
+      ];
     });
     setDataSourceState(dataSourceArr);
   }, [rates]);
@@ -59,9 +65,14 @@ const Exchanges = () => {
             }
           >
             <Option value="crytpocurrency">Cryptocurrency</Option>
-            {currencyDropdown?.data?.map((coin, index) => (
-              <Option value={coin.id}>{coin.id}</Option>
-            ))}
+            {currencyDropdown?.data?.map((coin, index) => {
+              return (
+                <Option
+                  value={coin.id}
+                  key={index}
+                >{`${coin.id} - ${coin.name}`}</Option>
+              );
+            })}
           </Select>
         </Col>
       </Row>
@@ -78,7 +89,22 @@ const Exchanges = () => {
               dataIndex={"EXCHANGE"}
               key={"EXCHANGE"}
             ></Column>
-            <Column title={"Tags"} />
+            <Column
+              title={"COUNTRY"}
+              dataIndex={`COUNTRY`}
+              key={"COUNTRY"}
+              render={() => <>{`${currencyName}`}</>}
+            />
+            <Column
+              title="TAGS"
+              dataIndex="TAGS"
+              key="TAGS"
+              render={() => (
+                <>
+                  <Tag color="blue">Poor</Tag>
+                </>
+              )}
+            />
           </Table>
         </Col>
       </Row>
