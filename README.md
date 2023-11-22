@@ -74,3 +74,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Exchanges API map fix
 
 [fix-for-map-object-API](https://stackoverflow.com/questions/40803828/how-can-i-map-through-an-object-in-reactjs)
+
+### Query param fix
+
+[fix-query-param](https://stackoverflow.com/questions/68158110/redux-toolkit-rtk-query-sending-query-parameters)
+
+### Object null or undefined or Function.entries is null
+
+[fix-for-function.entries](https://stackoverflow.com/questions/29721205/how-to-resolve-typeerror-cannot-convert-undefined-or-null-to-object)
+
+### How to create a dynamic table
+
+[how-to-create-a-dynamic-table](https://youtu.be/Z3NBh_PzGDU?si=5OXeHoZUOYhNRpzR)

@@ -1,43 +1,44 @@
-import { Card, Col, Row, Table } from "antd";
-import React from "react";
+import { Col, Row, Table } from "antd";
+import React, { useEffect, useState } from "react";
 import { useGetCryptoExchangesQuery } from "../services/cryptoExchangesApi";
 
 const Exchanges = () => {
   const currencyName = "ETH";
-  // const { data: data } = useGetCryptoExchangesQuery("BTC");
-  // const { data: data } = useGetCryptoExchangesQuery("BTC");
+  const dataSourceArr = [];
   const { data: data } = useGetCryptoExchangesQuery({ currencyName });
-
-  console.log(data);
-
+  const [dataSourceState, setDataSourceState] = useState([]);
   const rates = data?.data?.rates;
 
-  // for (var key in rates) {
-  //   // Console logs all the values in the objArr Array:
-  //   console.log(key, rates[key]);
-  //   // rates.push({key, rates[key]});
-  // }
+  const columns = [
+    {
+      title: "CURRENCY",
+      dataIndex: "CURRENCY",
+      key: "CURRENCY",
+    },
+    {
+      title: "EXCHANGE",
+      dataIndex: "EXCHANGE",
+      key: "EXCHANGE",
+    },
+  ];
+
+  useEffect(() => {
+    Object.entries(rates || {}).map(([coinName, exchange], i) => {
+      console.log("i=" + i, "coinName=" + coinName, "exchanges=" + exchange);
+      dataSourceArr.push({
+        key: i,
+        CURRENCY: coinName,
+        EXCHANGE: exchange,
+      });
+    });
+    setDataSourceState(dataSourceArr);
+  }, [rates]);
 
   return (
     <>
-      <Row>
+      <Row gutter={[32, 32]}>
         <Col>
-          <Card>
-            <p>Static Value</p>
-            <Table />;
-            {rates &&
-              Object.entries(rates).map(([coinName, Value], i) => {
-                return (
-                  <ul value={i} key={i}>
-                    <li>
-                      <span key={i}>
-                        {coinName} : {Value}
-                      </span>
-                    </li>
-                  </ul>
-                );
-              })}
-          </Card>
+          <Table columns={columns} dataSource={dataSourceState} />
         </Col>
       </Row>
     </>
