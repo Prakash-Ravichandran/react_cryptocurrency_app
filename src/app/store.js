@@ -5,6 +5,7 @@ import { cryptoNewsApi } from "../services/cryptoNewsApi";
 
 import { cryptoExchangesApi } from "../services/cryptoExchangesApi";
 import { cryptoExIDApi } from "../services/cryptoExIDApi";
+import { generalNewsApi } from "../services/generalNewsApi";
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     [cryptoNewsApi.reducerPath]: cryptoNewsApi.reducer,
     [cryptoExchangesApi.reducerPath]: cryptoExchangesApi.reducer,
     [cryptoExIDApi.reducerPath]: cryptoExIDApi.reducer,
+    [generalNewsApi.reducerPath]: generalNewsApi.reducer,
   },
 
   middleware: (getDefaultMiddleware) =>
@@ -20,5 +22,6 @@ export const store = configureStore({
       cryptoNewsApi.middleware,
       cryptoExchangesApi.middleware,
       cryptoExIDApi.middleware,
+      generalNewsApi.middleware,
     ]),
 });
