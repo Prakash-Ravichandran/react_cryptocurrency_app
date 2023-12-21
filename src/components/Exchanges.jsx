@@ -1,20 +1,23 @@
-import { Col, Row, Select, Table, Tag } from "antd";
+import { Col, Row, Select, Table } from "antd";
 import Column from "antd/es/table/Column";
 import React, { useEffect, useState } from "react";
 import { useGetCryptoExchangesQuery } from "../services/cryptoExchangesApi";
 import { useGetcryptoExIDApiQuery } from "../services/cryptoExIDApi";
 import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
+
 const { Option } = Select;
 
 const Exchanges = () => {
   let dataSourceArr = [];
 
   const [currencyName, setCurrName] = useState("ETH");
+  const [exchanges, setExchange] = useState();
   const [country, setcountry] = useState();
   const { data: data } = useGetCryptoExchangesQuery({ currencyName });
   const { data: dropdownData } = useGetCrytoMarketsQuery(100);
   const { data: currencyDropdown } = useGetcryptoExIDApiQuery();
-  console.log(currencyDropdown);
+  const { data: cryptoList, isFetching } = useGetCrytoMarketsQuery();
+  console.log(exchanges);
 
   const [dataSourceState, setDataSourceState] = useState([]);
   const rates = data?.data?.rates;
@@ -32,27 +35,29 @@ const Exchanges = () => {
     },
   ];
 
-  const tags = ["poor", "loser"];
+  const tags = ["HIGH", "LOW"];
 
   useEffect(() => {
     Object.entries(rates || {}).map(([coinName, exchange], i) => {
+      setExchange(exchange);
       dataSourceArr = [
         ...dataSourceArr,
         {
           key: i,
           CURRENCY: coinName,
           EXCHANGE: exchange,
-          COUNTRY: "t",
-          TAGS: "H",
+          COUNTRY: "",
+          LEVEL: exchange > 40 ? "High" : "Low",
         },
       ];
     });
+
     setDataSourceState(dataSourceArr);
   }, [rates]);
 
   return (
     <>
-      <Row>
+      <Row gutter={[32, 32]}>
         <Col span={24}>
           <Select
             showSearch
@@ -76,38 +81,27 @@ const Exchanges = () => {
           </Select>
         </Col>
       </Row>
-      <Row gutter={[32, 32]}>
-        <Col>
-          <Table dataSource={dataSourceState}>
-            <Column
-              title={"CURRENCY"}
-              dataIndex={"CURRENCY"}
-              key={"CURRENCY"}
-            ></Column>
-            <Column
-              title={`EXCHANGE of ${currencyName}`}
-              dataIndex={"EXCHANGE"}
-              key={"EXCHANGE"}
-            ></Column>
-            <Column
-              title={"COUNTRY"}
-              dataIndex={`COUNTRY`}
-              key={"COUNTRY"}
-              render={() => <>{`${currencyName}`}</>}
-            />
-            <Column
-              title="TAGS"
-              dataIndex="TAGS"
-              key="TAGS"
-              render={() => (
-                <>
-                  <Tag color="blue">Poor</Tag>
-                </>
-              )}
-            />
-          </Table>
-        </Col>
-      </Row>
+
+      <Table dataSource={dataSourceState}>
+        <Column
+          title={"CURRENCY"}
+          dataIndex={"CURRENCY"}
+          key={"CURRENCY"}
+        ></Column>
+        <Column
+          title={`EXCHANGE of ${currencyName}`}
+          dataIndex={"EXCHANGE"}
+          key={"EXCHANGE"}
+        ></Column>
+        <Column
+          title={"COUNTRY"}
+          dataIndex={`COUNTRY`}
+          key={"COUNTRY"}
+          render={() => <>{`${currencyName}`}</>}
+        />
+
+        <Column title={"LEVEL"} dataIndex={"LEVEL"} key={"LEVEL"}></Column>
+      </Table>
     </>
   );
 };
