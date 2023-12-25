@@ -8,8 +8,6 @@ const demoImage =
 const NewsComponent = () => {
   const { data: news, isFetching } = useGetgeneralNewsApiQuery();
 
-  //   console.log(JSON.stringify(news?.articles));
-
   if (isFetching) return "Loading ...";
   return (
     <>
@@ -29,7 +27,7 @@ const NewsComponent = () => {
                       </div>
                     </div>
 
-                    <p class="news-description">{value?.description}</p>
+                    <p className="news-description">{value?.description}</p>
 
                     <div className="provider-container">
                       <Avatar src={value?.urlToImage || demoImage}></Avatar>
