@@ -8,7 +8,7 @@ const demoImage =
 const NewsComponent = () => {
   const { data: news, isFetching } = useGetgeneralNewsApiQuery();
 
-  console.log(JSON.stringify(news?.articles));
+  //   console.log(JSON.stringify(news?.articles));
 
   if (isFetching) return "Loading ...";
   return (
