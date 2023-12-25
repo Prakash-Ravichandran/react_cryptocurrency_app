@@ -431,7 +431,7 @@ a:hover {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.news-row .ant-card .news-image-container > p {
+.news-row .ant-card .news-description {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;

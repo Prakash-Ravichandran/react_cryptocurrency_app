@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { useGetCryptoExchangesQuery } from "../services/cryptoExchangesApi";
 import { useGetcryptoExIDApiQuery } from "../services/cryptoExIDApi";
 import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
-import { useGetgeneralNewsApiQuery } from "../services/generalNewsApi";
 
 const { Option } = Select;
 
@@ -18,9 +17,6 @@ const Exchanges = () => {
   const { data: dropdownData } = useGetCrytoMarketsQuery(100);
   const { data: currencyDropdown } = useGetcryptoExIDApiQuery();
   const { data: cryptoList, isFetching } = useGetCrytoMarketsQuery();
-  const { data: news } = useGetgeneralNewsApiQuery();
-
-  console.log(JSON.stringify(news?.articles));
 
   console.log(exchanges);
 
