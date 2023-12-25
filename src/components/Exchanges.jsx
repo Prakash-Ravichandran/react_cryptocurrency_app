@@ -20,7 +20,7 @@ const Exchanges = () => {
   const { data: cryptoList, isFetching } = useGetCrytoMarketsQuery();
   const { data: news } = useGetgeneralNewsApiQuery();
 
-  console.log("news=" + JSON.stringify(news));
+  console.log(JSON.stringify(news?.articles));
 
   console.log(exchanges);
 

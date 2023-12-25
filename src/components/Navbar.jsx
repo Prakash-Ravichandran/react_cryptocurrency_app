@@ -1,16 +1,14 @@
-import React from "react";
-import { Button, Menu, Typography, Avatar } from "antd";
-import { Link } from "react-router-dom";
-import icon from "../images/cryptocurrency.png";
 import {
-  HomeOutlined,
-  MoneyCollectOutlined,
   BulbOutlined,
   FundOutlined,
+  HomeOutlined,
   MenuOutlined,
+  MoneyCollectOutlined,
 } from "@ant-design/icons";
-import { useState } from "react";
-import { useEffect } from "react";
+import { Avatar, Button, Menu, Typography } from "antd";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import icon from "../images/cryptocurrency.png";
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(true);
@@ -61,6 +59,9 @@ const Navbar = () => {
           </Menu.Item>
           <Menu.Item icon={<BulbOutlined />}>
             <Link to="/news">News</Link>
+          </Menu.Item>
+          <Menu.Item icon={<BulbOutlined />}>
+            <Link to="/newscomp">News-COmp</Link>
           </Menu.Item>
         </Menu>
       )}

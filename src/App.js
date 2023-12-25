@@ -1,17 +1,19 @@
 import React from "react";
 import {
-  Navbar,
-  HomePage,
-  Exchanges,
-  CryptoDetails,
   Cryptocurrencies,
+  CryptoDetails,
+  Exchanges,
+  HomePage,
+  Navbar,
   News,
 } from "./components";
 
-import { Routes, Route, Link, BrowserRouter, Router } from "react-router-dom";
+import NewsComponent from "./components/NewsComponent";
+
 import { Layout, Space, Typography } from "antd";
-import "./App.css";
 import { Provider } from "react-redux";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import "./App.css";
 import { store } from "./app/store";
 
 const App = () => {
@@ -43,6 +45,11 @@ const App = () => {
                     </Route>
 
                     <Route exact path="/news" element={<News />}></Route>
+                    <Route
+                      exact
+                      path="/newscomp"
+                      element={<NewsComponent />}
+                    ></Route>
                   </Routes>
                 </div>
               </Layout>
