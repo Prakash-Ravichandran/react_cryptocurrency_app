@@ -22,18 +22,22 @@ const NewsComponent = () => {
                   <a href={value?.url} target="_blank" rel="noreferrer">
                     <div className="news-image-container">
                       <Title className="news-title" level={4}>
-                        {value?.title}
+                        {value?.source?.name}
                       </Title>
+                      <Avatar src={value?.image || demoImage}></Avatar>
+                    </div>
+
+                    <p className="news-description">
+                      Headline:{value?.description}
+                    </p>
+                    <div className="news-image-container news-image-center">
                       <div>
                         <img src={value?.image || demoImage}></img>
                       </div>
                     </div>
 
-                    <p className="news-description">{value?.description}</p>
-
                     <div className="provider-container">
-                      <Avatar src={value?.image || demoImage}></Avatar>
-                      <h3>{`Author: ${value?.author}`}</h3>
+                      <h3 className="news-description">{`Author: ${value?.content}`}</h3>
                     </div>
                   </a>
                 </Card>

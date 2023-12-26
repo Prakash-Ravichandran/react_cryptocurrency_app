@@ -437,3 +437,9 @@ a:hover {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.news-image-center {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}

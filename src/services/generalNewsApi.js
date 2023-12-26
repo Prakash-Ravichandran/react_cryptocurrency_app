@@ -5,7 +5,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const apiKey = "44b0285191b70f1f89dd19885c2eb38e";
 
-const category = "general";
+const category = "health";
 const baseUrl =
   "https://gnews.io/api/v4/top-headlines?category=" +
   category +
