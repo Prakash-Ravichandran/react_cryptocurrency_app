@@ -8,6 +8,8 @@ const demoImage =
 const NewsComponent = () => {
   const { data: news, isFetching } = useGetgeneralNewsApiQuery();
 
+  console.log("News=" + JSON.stringify(news.articles));
+
   if (isFetching) return "Loading ...";
   return (
     <>
@@ -23,14 +25,14 @@ const NewsComponent = () => {
                         {value?.title}
                       </Title>
                       <div>
-                        <img src={value?.urlToImage || demoImage}></img>
+                        <img src={value?.image || demoImage}></img>
                       </div>
                     </div>
 
                     <p className="news-description">{value?.description}</p>
 
                     <div className="provider-container">
-                      <Avatar src={value?.urlToImage || demoImage}></Avatar>
+                      <Avatar src={value?.image || demoImage}></Avatar>
                       <h3>{`Author: ${value?.author}`}</h3>
                     </div>
                   </a>
