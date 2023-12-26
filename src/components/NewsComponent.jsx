@@ -27,17 +27,14 @@ const NewsComponent = () => {
                       <Avatar src={value?.image || demoImage}></Avatar>
                     </div>
 
-                    <p className="news-description">
-                      Headline:{value?.description}
-                    </p>
+                    <p className="news-description">{value?.description}</p>
                     <div className="news-image-container news-image-center">
                       <div>
                         <img src={value?.image || demoImage}></img>
                       </div>
                     </div>
-
                     <div className="provider-container">
-                      <h3 className="news-description">{`Author: ${value?.content}`}</h3>
+                      <h3 className="news-description">{`${value?.content}`}</h3>
                     </div>
                   </a>
                 </Card>
