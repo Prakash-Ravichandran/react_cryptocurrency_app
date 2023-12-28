@@ -19,8 +19,10 @@ const category = [
 ];
 
 const NewsComponent = () => {
-  const [newsCategory, setNewsCategory] = useState("general");
-  const { data: news, isFetching } = useGetgeneralNewsApiQuery();
+  const [newsCategory, setNewsCategory] = useState("world");
+  const { data: news, isFetching } = useGetgeneralNewsApiQuery({
+    newsCategory,
+  });
 
   console.log("News=" + JSON.stringify(news?.articles));
 
