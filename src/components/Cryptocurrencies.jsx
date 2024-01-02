@@ -1,9 +1,9 @@
-import React, { Fragment, useEffect } from "react";
-import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
-import { useState } from "react";
-import { Card, Row, Col } from "antd";
-import { Link } from "react-router-dom";
+import { Card, Col, Row } from "antd";
 import millify from "millify";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
+import Loader from "./Loader";
 
 const Crytocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
@@ -21,7 +21,17 @@ const Crytocurrencies = ({ simplified }) => {
     setcryptos(filteredData);
   }, [cryptoList, searchTerm]);
 
-  if (isFetching) return "Loading ...";
+  if (isFetching)
+    return (
+      <Row
+        gutter={[24, 24]}
+        className="news-row"
+        justify={"center"}
+        align={"middle"}
+      >
+        <Loader />
+      </Row>
+    );
 
   return (
     <>

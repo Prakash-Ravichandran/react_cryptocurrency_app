@@ -10,9 +10,9 @@ export const generalNewsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
     getgeneralNewsApi: builder.query({
-      query: ({ newsCategory }) =>
+      query: ({ newsCategory, symbol_lang }) =>
         createRequest(
-          `?category=${newsCategory}&lang=en&country=us&max=12&apikey=${apiKey}`
+          `?category=${newsCategory}&lang=en&country=${`us`}&max=12&apikey=${apiKey}`
         ),
     }),
   }),

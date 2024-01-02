@@ -3,6 +3,7 @@ import moment from "moment/moment";
 import React, { useState } from "react";
 import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
+import Loader from "./Loader";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -18,7 +19,19 @@ const News = ({ simplified }) => {
   const { data } = useGetCrytoMarketsQuery(100);
   const value = newsList?.value;
 
-  if (isFetching) return "Loading ...";
+  if (isFetching)
+    return (
+      <>
+        <Row
+          gutter={[24, 24]}
+          className="news-row"
+          justify={"center"}
+          align={"middle"}
+        >
+          <Loader />
+        </Row>
+      </>
+    );
 
   return (
     <>

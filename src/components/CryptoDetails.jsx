@@ -1,25 +1,25 @@
-import React from "react";
+import {
+  CheckOutlined,
+  DollarCircleOutlined,
+  ExclamationCircleOutlined,
+  FundOutlined,
+  MoneyCollectOutlined,
+  NumberOutlined,
+  StopOutlined,
+  ThunderboltOutlined,
+  TrophyOutlined,
+} from "@ant-design/icons";
+import { Col, Row, Select, Typography } from "antd";
+import { Option } from "antd/es/mentions";
+import millify from "millify";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import {
   useGetCryptoDetailsQuery,
   useGetCryptoHistoryQuery,
 } from "../services/cryptoMarketsApi";
-import millify from "millify";
-import {
-  MoneyCollectOutlined,
-  DollarCircleOutlined,
-  NumberOutlined,
-  ThunderboltOutlined,
-  TrophyOutlined,
-  FundOutlined,
-  StopOutlined,
-  CheckOutlined,
-  ExclamationCircleOutlined,
-} from "@ant-design/icons";
-import { Typography, Statistic, Row, Col, Select } from "antd";
-import { Option } from "antd/es/mentions";
-import { useState } from "react";
 import LineChart from "./LineChart";
+import Loader from "./Loader";
 const { Title, Text } = Typography;
 
 const CrytoDetails = () => {
@@ -107,7 +107,19 @@ const CrytoDetails = () => {
     },
   ];
 
-  if (isFetching) return "Loading...";
+  if (isFetching)
+    return (
+      <>
+        <Row
+          gutter={[24, 24]}
+          className="news-row"
+          justify={"center"}
+          align={"middle"}
+        >
+          <Loader />
+        </Row>
+      </>
+    );
 
   return (
     <>

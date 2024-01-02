@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useGetCryptoExchangesQuery } from "../services/cryptoExchangesApi";
 import { useGetcryptoExIDApiQuery } from "../services/cryptoExIDApi";
 import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
+import Loader from "./Loader";
 
 const { Option } = Select;
 
@@ -13,10 +14,12 @@ const Exchanges = () => {
   const [currencyName, setCurrName] = useState("ETH");
   const [exchanges, setExchange] = useState();
   const [country, setcountry] = useState();
-  const { data: data } = useGetCryptoExchangesQuery({ currencyName });
+  const { data: data, isFetching } = useGetCryptoExchangesQuery({
+    currencyName,
+  });
   const { data: dropdownData } = useGetCrytoMarketsQuery(100);
   const { data: currencyDropdown } = useGetcryptoExIDApiQuery();
-  const { data: cryptoList, isFetching } = useGetCrytoMarketsQuery();
+  const { data: cryptoList } = useGetCrytoMarketsQuery();
 
   console.log(exchanges);
 
@@ -55,6 +58,20 @@ const Exchanges = () => {
 
     setDataSourceState(dataSourceArr);
   }, [rates]);
+
+  if (isFetching)
+    return (
+      <>
+        <Row
+          gutter={[24, 24]}
+          className="news-row"
+          justify={"center"}
+          align={"middle"}
+        >
+          <Loader />
+        </Row>
+      </>
+    );
 
   return (
     <>

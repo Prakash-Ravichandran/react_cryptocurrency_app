@@ -4,6 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
 import Cryptocurrencies from "./Cryptocurrencies";
+import Loader from "./Loader";
 import NewsComponent from "./NewsComponent";
 
 const { Title } = Typography;
@@ -13,7 +14,19 @@ const HomePage = () => {
   console.log(data);
   const globalStats = data?.data?.stats;
 
-  if (isFetching) return "Loading ....";
+  if (isFetching)
+    return (
+      <>
+        <Row
+          gutter={[24, 24]}
+          className="news-row"
+          justify={"center"}
+          align={"middle"}
+        >
+          <Loader />
+        </Row>
+      </>
+    );
   return (
     <div>
       <Title level={2} className="heading">
