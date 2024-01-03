@@ -86,3 +86,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### How to create a dynamic table
 
 [how-to-create-a-dynamic-table](https://youtu.be/Z3NBh_PzGDU?si=5OXeHoZUOYhNRpzR)
+
+### Fix for makeStyles dependecy
+
+[fix-for-makeStyles-dependency](https://stackoverflow.com/questions/69366234/uncaught-error-material-ui-makestyles-is-not-longer-exported-from-mui-materia)

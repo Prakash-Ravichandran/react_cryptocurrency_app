@@ -63,6 +63,9 @@ const Navbar = () => {
           <Menu.Item icon={<BulbOutlined />}>
             <Link to="/newscomp">News-COmp</Link>
           </Menu.Item>
+          <Menu.Item icon={<BulbOutlined />}>
+            <Link to="/contact">Contact</Link>
+          </Menu.Item>
         </Menu>
       )}
     </div>

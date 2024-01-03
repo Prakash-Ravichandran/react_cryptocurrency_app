@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Contact,
   Cryptocurrencies,
   CryptoDetails,
   Exchanges,
@@ -15,7 +16,6 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { store } from "./app/store";
-import Loader from "./components/Loader";
 
 const App = () => {
   return (
@@ -51,7 +51,7 @@ const App = () => {
                       path="/newscomp"
                       element={<NewsComponent />}
                     ></Route>
-                    <Route exact path="/loader" element={<Loader />}></Route>
+                    <Route exact path="/contact" element={<Contact />}></Route>
                   </Routes>
                 </div>
               </Layout>
