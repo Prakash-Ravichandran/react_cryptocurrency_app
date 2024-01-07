@@ -5,6 +5,7 @@ import {
   MenuOutlined,
   MoneyCollectOutlined,
 } from "@ant-design/icons";
+import { ContactMailOutlined } from "@mui/icons-material";
 import { Avatar, Button, Menu, Typography } from "antd";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -58,12 +59,12 @@ const Navbar = () => {
             <Link to="/exchanges">Exchanges</Link>
           </Menu.Item>
           <Menu.Item icon={<BulbOutlined />}>
-            <Link to="/news">News</Link>
+            <Link to="/news">News=to be removed</Link>
           </Menu.Item>
           <Menu.Item icon={<BulbOutlined />}>
-            <Link to="/newscomp">News-COmp</Link>
+            <Link to="/newscomp">News</Link>
           </Menu.Item>
-          <Menu.Item icon={<BulbOutlined />}>
+          <Menu.Item icon={<ContactMailOutlined />}>
             <Link to="/contact">Contact</Link>
           </Menu.Item>
         </Menu>
