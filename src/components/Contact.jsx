@@ -46,6 +46,9 @@ const Contact = () => {
       .required("Description is required")
       .min(50, "Description must be at least 50 characters")
       .max(100, "Username must not exceed 100 characters"),
+    rating: Yup.string().required(
+      "Please select the rating for a cryptocurrency"
+    ),
   });
 
   const {
@@ -86,7 +89,7 @@ const Contact = () => {
           {...register("name")}
           error={errors.name ? true : false}
         />
-        <Typography variant="inherit" color="textSecondary">
+        <Typography variant="subtitle2" color="error">
           {errors.name?.message}
         </Typography>
         <TextField
@@ -107,7 +110,7 @@ const Contact = () => {
           {...register("email")}
           error={errors.email ? true : false}
         />
-        <Typography variant="inherit" color="textSecondary">
+        <Typography variant="subtitle2" color="error">
           {errors.email?.message}
         </Typography>
         <TextField
@@ -130,7 +133,7 @@ const Contact = () => {
           {...register("description")}
           error={errors.description ? true : false}
         />
-        <Typography variant="inherit" color="textSecondary">
+        <Typography variant="subtitle2" color="error">
           {errors.description ? errors.description.message : null}
         </Typography>
         <FormControl className={classes.field}>
@@ -142,6 +145,9 @@ const Contact = () => {
             <FormControlLabel value={"2"} control={<Radio />} label="2" />
             <FormControlLabel value={"1"} control={<Radio />} label="1" />
           </RadioGroup>
+          <Typography variant="subtitle2" color="error">
+            {errors.rating?.message}
+          </Typography>
         </FormControl>
         <Button
           type="submit"
