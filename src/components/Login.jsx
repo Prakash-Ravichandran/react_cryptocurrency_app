@@ -9,7 +9,8 @@ import {
   Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React from "react";
+import PropTypes from "prop-types";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 
@@ -26,7 +27,19 @@ const useStyles = makeStyles(() => {
   };
 });
 
-const Login = () => {
+async function loginUser(credentials) {
+  return fetch("http://localhost:8080/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(credentials),
+  }).then((data) => data.json());
+}
+
+const Login = ({ setToken }) => {
+  const [username, setUserName] = useState();
+  const [password, setPassword] = useState();
   const classes = useStyles();
   const validationSchema = Yup.object().shape({
     name: Yup.string()
@@ -45,8 +58,16 @@ const Login = () => {
     resolver: yupResolver(validationSchema),
   });
 
-  const onSubmit = (data) => {
-    console.log(JSON.stringify(data, null, 2));
+  // const onSubmit = (data) => {
+  //   console.log(JSON.stringify(data, null, 2));
+  // };
+
+  const onSubmit = async (e) => {
+    const token = await loginUser({
+      username,
+      password,
+    });
+    setToken(token);
   };
 
   return (
@@ -71,6 +92,7 @@ const Login = () => {
             }}
             {...register("name")}
             error={errors.name ? true : false}
+            onChange={(e) => setUserName(e.target.value)}
           />
           <Typography variant="subtitle2" color="error">
             {errors.name?.message}
@@ -92,6 +114,7 @@ const Login = () => {
             }}
             {...register("email")}
             error={errors.email ? true : false}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <Typography variant="subtitle2" color="error">
             {errors.email?.message}
@@ -110,6 +133,9 @@ const Login = () => {
       </Container>
     </>
   );
+};
+Login.propTypes = {
+  setToken: PropTypes.func.isRequired,
 };
 
 export default Login;

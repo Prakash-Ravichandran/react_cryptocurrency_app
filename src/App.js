@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Contact,
   Cryptocurrencies,
@@ -19,6 +19,11 @@ import { store } from "./app/store";
 import Login from "./components/Login";
 
 const App = () => {
+  const [token, setToken] = useState();
+
+  if (!token) {
+    return <Login setToken={setToken} />;
+  }
   return (
     <React.Fragment>
       <BrowserRouter>
@@ -53,7 +58,7 @@ const App = () => {
                       element={<NewsComponent />}
                     ></Route>
                     <Route exact path="/contact" element={<Contact />}></Route>
-                    <Route exact path="/login" element={<Login />}></Route>
+                    {/* <Route exact path="/login" element={<Login />}></Route> */}
                   </Routes>
                 </div>
               </Layout>
