@@ -16,6 +16,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { store } from "./app/store";
+import Login from "./components/Login";
 
 const App = () => {
   return (
@@ -52,6 +53,7 @@ const App = () => {
                       element={<NewsComponent />}
                     ></Route>
                     <Route exact path="/contact" element={<Contact />}></Route>
+                    <Route exact path="/login" element={<Login />}></Route>
                   </Routes>
                 </div>
               </Layout>

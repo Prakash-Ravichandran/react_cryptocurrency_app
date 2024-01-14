@@ -7,6 +7,7 @@ import {
 } from "@mui/icons-material";
 import {
   Button,
+  Container,
   FormControl,
   FormControlLabel,
   FormLabel,
@@ -66,99 +67,107 @@ const Contact = () => {
 
   return (
     <>
-      <form>
-        <FormLabel>
-          {" "}
-          Submit your feedback about your favourite bitcoin !{" "}
-        </FormLabel>
-        <TextField
-          label={"Name"}
-          name={"name"}
-          placeholder={"Enter your name"}
-          variant={"outlined"}
-          fullWidth
-          required
-          className={classes.field}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <AccountCircle />
-              </InputAdornment>
-            ),
-          }}
-          {...register("name")}
-          error={errors.name ? true : false}
-        />
-        <Typography variant="subtitle2" color="error">
-          {errors.name?.message}
-        </Typography>
-        <TextField
-          label={"Email"}
-          name={"email"}
-          placeholder={"Enter your email"}
-          variant={"outlined"}
-          fullWidth
-          required
-          className={classes.field}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Email></Email>
-              </InputAdornment>
-            ),
-          }}
-          {...register("email")}
-          error={errors.email ? true : false}
-        />
-        <Typography variant="subtitle2" color="error">
-          {errors.email?.message}
-        </Typography>
-        <TextField
-          placeholder="Describe the best about your favourite bitcoin !"
-          label="Likes"
-          name="Favourite Bitcoin"
-          variant="outlined"
-          fullWidth
-          required
-          className={classes.field}
-          multiline
-          rows={3}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Description />
-              </InputAdornment>
-            ),
-          }}
-          {...register("description")}
-          error={errors.description ? true : false}
-        />
-        <Typography variant="subtitle2" color="error">
-          {errors.description ? errors.description.message : null}
-        </Typography>
-        <FormControl className={classes.field}>
-          <FormLabel>Your rating for the cryptocurrencies</FormLabel>
-          <RadioGroup name="rating" value={""}>
-            <FormControlLabel value={"5"} control={<Radio />} label="5" />
-            <FormControlLabel value={"4"} control={<Radio />} label="4" />
-            <FormControlLabel value={"3"} control={<Radio />} label="3" />
-            <FormControlLabel value={"2"} control={<Radio />} label="2" />
-            <FormControlLabel value={"1"} control={<Radio />} label="1" />
-          </RadioGroup>
+      <Container className={classes.container}>
+        <form>
+          <FormLabel>
+            {" "}
+            Submit your feedback about your favourite bitcoin !{" "}
+          </FormLabel>
+          <TextField
+            label={"Name"}
+            name={"name"}
+            placeholder={"Enter your name"}
+            variant={"outlined"}
+            fullWidth
+            required
+            className={classes.field}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <AccountCircle />
+                </InputAdornment>
+              ),
+            }}
+            {...register("name")}
+            error={errors.name ? true : false}
+          />
           <Typography variant="subtitle2" color="error">
-            {errors.rating?.message}
+            {errors.name?.message}
           </Typography>
-        </FormControl>
-        <Button
-          type="submit"
-          variant="outlined"
-          color="primary"
-          endIcon={<KeyboardArrowRight />}
-          onClick={handleSubmit(onSubmit)}
-        >
-          Submit
-        </Button>
-      </form>
+          <TextField
+            label={"Email"}
+            name={"email"}
+            placeholder={"Enter your email"}
+            variant={"outlined"}
+            fullWidth
+            required
+            className={classes.field}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Email></Email>
+                </InputAdornment>
+              ),
+            }}
+            {...register("email")}
+            error={errors.email ? true : false}
+          />
+          <Typography variant="subtitle2" color="error">
+            {errors.email?.message}
+          </Typography>
+          <TextField
+            placeholder="Describe the best about your favourite bitcoin !"
+            label="Likes"
+            name="Favourite Bitcoin"
+            variant="outlined"
+            fullWidth
+            required
+            className={classes.field}
+            multiline
+            rows={3}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Description />
+                </InputAdornment>
+              ),
+            }}
+            {...register("description")}
+            error={errors.description ? true : false}
+          />
+          <Typography variant="subtitle2" color="error">
+            {errors.description ? errors.description.message : null}
+          </Typography>
+          <FormControl className={classes.field}>
+            <FormLabel>Your rating for the cryptocurrencies :</FormLabel>
+            <RadioGroup
+              name="rating"
+              value={"5"}
+              {...register("rating")}
+              error={errors.rating ? true : false}
+            >
+              <FormControlLabel value={"5"} control={<Radio />} label="5" />
+              <FormControlLabel value={"4"} control={<Radio />} label="4" />
+              <FormControlLabel value={"3"} control={<Radio />} label="3" />
+              <FormControlLabel value={"2"} control={<Radio />} label="2" />
+              <FormControlLabel value={"1"} control={<Radio />} label="1" />
+            </RadioGroup>
+
+            <Typography variant="subtitle2" color="error">
+              {errors.rating?.message}
+            </Typography>
+          </FormControl>
+          <Button
+            type="submit"
+            variant="outlined"
+            color="primary"
+            endIcon={<KeyboardArrowRight />}
+            onClick={handleSubmit(onSubmit)}
+          >
+            Submit
+          </Button>
+        </form>
+      </Container>
     </>
   );
 };

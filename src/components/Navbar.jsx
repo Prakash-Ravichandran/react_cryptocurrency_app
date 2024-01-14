@@ -67,6 +67,9 @@ const Navbar = () => {
           <Menu.Item icon={<ContactMailOutlined />}>
             <Link to="/contact">Contact</Link>
           </Menu.Item>
+          <Menu.Item icon={<ContactMailOutlined />}>
+            <Link to="/login">Login</Link>
+          </Menu.Item>
         </Menu>
       )}
     </div>
