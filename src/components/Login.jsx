@@ -44,6 +44,8 @@ async function loginUser(credentials) {
 const Login = ({ setToken }) => {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
+  const [confirmpassword, setConfirmPassword] = useState();
+
   const classes = useStyles();
 
   const validationSchema = Yup.object().shape({
@@ -52,6 +54,7 @@ const Login = ({ setToken }) => {
       .min(5, "Username must be at least 5 characters")
       .max(20, "Username must not exceed 20 characters"),
     password: Yup.string().required("password is required"),
+    confirmpassword: Yup.string().required("conifrm password is required"),
   });
 
   const {
@@ -79,14 +82,25 @@ const Login = ({ setToken }) => {
     const token = await loginUser({
       username,
       password,
+      confirmpassword,
     });
 
-    // if (username == "admin" && password == "admin") {
-    //   setToken(token);
-    // } else {
-    //   setToken(null);
-    // }
-    setToken(token);
+    if (
+      username == token.username &&
+      password == token.password &&
+      confirmpassword == token.confirmpassword
+    ) {
+      setToken(token);
+    } else {
+      console.log("Invalid Credentials");
+      alert(`Entered invalid credentials, please use below credentials to login
+       name : admin,
+       password: admin,
+       confirmpassword: admin,
+      `);
+      setToken(null);
+    }
+    // setToken(token);
 
     console.log("username =" + username);
     console.log("Token =" + JSON.stringify(token));
@@ -165,11 +179,11 @@ const Login = ({ setToken }) => {
               validate: (value) =>
                 value === password2.current || "The passwords do not match",
             })}
-            error={errors.password ? true : false}
-            onChange={(e) => setPassword(e.target.value)}
+            error={errors.confirmpassword ? true : false}
+            onChange={(e) => setConfirmPassword(e.target.value)}
           />
           <Typography variant="subtitle2" color="error">
-            {errors.password?.message}
+            {errors.confirmpassword?.message}
           </Typography>
 
           <Button
