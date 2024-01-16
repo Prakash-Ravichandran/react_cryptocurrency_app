@@ -15,6 +15,7 @@ import {
 import { makeStyles } from "@mui/styles";
 import PropTypes from "prop-types";
 import React, { useRef, useState } from "react";
+import useSignIn from "react-auth-kit/hooks/useSignIn";
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 
@@ -45,6 +46,7 @@ const Login = ({ setToken }) => {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
   const classes = useStyles();
+  const signIn = useSignIn();
 
   const validationSchema = Yup.object().shape({
     name: Yup.string()
@@ -81,12 +83,16 @@ const Login = ({ setToken }) => {
       password,
     });
 
-    // if (username == "admin" && password == "admin") {
-    //   setToken(token);
-    // } else {
-    //   setToken(null);
-    // }
-    setToken(token);
+    if (username == token.username && password == token.password) {
+      setToken(token);
+    } else {
+      setToken(null);
+      console.log("Invalid Credentials");
+      alert(`Entered invalid credentials, please use below credentials to login
+       name : admin,
+       password: admin,
+      `);
+    }
 
     console.log("username =" + username);
     console.log("Token =" + JSON.stringify(token));
@@ -145,7 +151,7 @@ const Login = ({ setToken }) => {
           <Typography variant="subtitle2" color="error">
             {errors.password?.message}
           </Typography>
-          <TextField
+          {/* <TextField
             label={"Confirm-Password"}
             name={"confirmpassword"}
             placeholder={"Confrim Password"}
@@ -170,7 +176,7 @@ const Login = ({ setToken }) => {
           />
           <Typography variant="subtitle2" color="error">
             {errors.password?.message}
-          </Typography>
+          </Typography> */}
 
           <Button
             type="submit"

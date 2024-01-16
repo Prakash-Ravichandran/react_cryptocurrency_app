@@ -4,12 +4,14 @@ const app = express();
 
 app.use(cors());
 
-var token = {
-  authToken: "test123",
+var authToken = {
+  token: "test123",
+  username: "admin",
+  password: "admin",
 };
 
 app.use("/login", (req, res) => {
-  res.send(token);
+  res.send(authToken);
 });
 
 app.listen(8080, () =>
