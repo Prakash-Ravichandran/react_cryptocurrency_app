@@ -97,7 +97,7 @@ const Login = ({ setToken }) => {
       alert(`Entered invalid credentials, please use below credentials to login
        name : admin,
        password: admin,
-       confirmpassword: admin,
+       confirmpassword: admin.
       `);
       setToken(null);
     }
