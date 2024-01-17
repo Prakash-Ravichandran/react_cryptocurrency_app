@@ -84,6 +84,7 @@ const Login = ({ setToken }) => {
       password,
       confirmpassword,
     });
+    setToken(token);
 
     if (
       username == token.username &&
@@ -100,7 +101,7 @@ const Login = ({ setToken }) => {
       `);
       setToken(null);
     }
-    // setToken(token);
+    setToken(token);
 
     console.log("username =" + username);
     console.log("Token =" + JSON.stringify(token));
