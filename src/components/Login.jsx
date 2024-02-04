@@ -17,6 +17,16 @@ import PropTypes from "prop-types";
 import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
+// google SignIn Imports
+import { useEffect } from "react";
+
+import { gapi } from "gapi-script";
+import { GoogleLogin } from "react-google-login";
+
+const clientID =
+  "728562345073-fkrij7aekj2h2qgqjgsro44cjsovi4oi.apps.googleusercontent.com";
+
+//closing google imports
 
 const useStyles = makeStyles(() => {
   return {
@@ -41,7 +51,40 @@ async function loginUser(credentials) {
   }).then((data) => data.json());
 }
 
-const Login = ({ setToken }) => {
+const Login = ({ setToken, googleSetToken, gToken }) => {
+  const onSuccess = (res) => {
+    console.log("Auth Sucess login:" + JSON.stringify(res));
+    console.log("Access Token login:" + JSON.stringify(res.xc.access_token));
+    setToken(res.xc.access_token);
+  };
+
+  const onFailure = (res) => {
+    console.log("Auth Failed:" + res);
+  };
+
+  const GoogleSignInButton = ({ googleSetToken }) => {
+    useEffect(() => {
+      function start() {
+        gapi.client.init({
+          clientId: clientID,
+          scope: "",
+        });
+      }
+      gapi.load("client:auth2", start);
+    });
+
+    return (
+      <GoogleLogin
+        clientId={clientID}
+        buttonText="Sign in with Google"
+        onSuccess={onSuccess}
+        onFailure={onFailure}
+        cookiePolicy={"single_host_origin"}
+      />
+    );
+  };
+
+  //closing google component
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
   const [confirmpassword, setConfirmPassword] = useState();
@@ -73,10 +116,6 @@ const Login = ({ setToken }) => {
   const password2 = useRef({});
   password2.current = watch("password", "");
   console.log("password=" + password2.current);
-
-  // const onSubmit = (data) => {
-  //   console.log(JSON.stringify(data, null, 2));
-  // };
 
   const onSubmit = async (e) => {
     const token = await loginUser({
@@ -196,6 +235,8 @@ const Login = ({ setToken }) => {
           >
             Login
           </Button>
+          <p>Login With Google</p>
+          <GoogleSignInButton />
         </form>
       </Container>
     </>

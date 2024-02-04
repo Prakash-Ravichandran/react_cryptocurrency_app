@@ -20,10 +20,12 @@ import Login from "./components/Login";
 
 const App = () => {
   const [token, setToken] = useState();
+  const [googleToken, googleSetToken] = useState();
 
   if (!token) {
     return <Login setToken={setToken} />;
   }
+
   return (
     <React.Fragment>
       <BrowserRouter>
