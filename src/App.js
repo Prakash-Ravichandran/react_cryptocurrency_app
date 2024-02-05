@@ -17,6 +17,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { store } from "./app/store";
 import Login from "./components/Login";
+import Signout from "./components/Signout";
 
 const App = () => {
   const [token, setToken] = useState();
@@ -38,7 +39,10 @@ const App = () => {
               <Layout>
                 <div className="routes">
                   <Routes>
-                    <Route path="/" element={<HomePage />}></Route>
+                    <Route
+                      path="/"
+                      element={<HomePage setToken={setToken} />}
+                    ></Route>
                     <Route
                       exact
                       path="/exchanges"
@@ -59,7 +63,16 @@ const App = () => {
                       path="/newscomp"
                       element={<NewsComponent />}
                     ></Route>
-                    <Route exact path="/contact" element={<Contact />}></Route>
+                    <Route
+                      exact
+                      path="/contact"
+                      element={<Contact setToken={setToken} />}
+                    ></Route>
+                    <Route
+                      exact
+                      path="/signout"
+                      element={<Signout setToken={setToken} />}
+                    ></Route>
                     {/* <Route exact path="/login" element={<Login />}></Route> */}
                   </Routes>
                 </div>

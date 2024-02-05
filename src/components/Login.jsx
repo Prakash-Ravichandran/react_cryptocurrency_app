@@ -84,6 +84,41 @@ const Login = ({ setToken, googleSetToken, gToken }) => {
     );
   };
 
+  //google sign out
+
+  // const responseGoogle = (response) => {
+  //   console.log("Failed: " + response);
+  // };
+
+  // const onLogoutSuccess = (res) => {
+  //   console.log("Logout success:" + res);
+  //   setToken(null);
+  // };
+
+  // const GoogleSignoutButton = () => {
+  //   const clientId =
+  //     "728562345073-fkrij7aekj2h2qgqjgsro44cjsovi4oi.apps.googleusercontent.com";
+  //   useEffect(() => {
+  //     function start() {
+  //       gapi.client.init({
+  //         clientId: clientID,
+  //         scope: "",
+  //       });
+  //     }
+  //     gapi.load("client:auth2", start);
+  //   });
+  //   return (
+  //     <GoogleLogout
+  //       clientId={clientId}
+  //       buttonText="Logout of"
+  //       onLogoutSuccess={onLogoutSuccess}
+  //       onSuccess={onLogoutSuccess}
+  //       onFailure={responseGoogle}
+  //       cookiePolicy={"single_host_origin"}
+  //     />
+  //   );
+  // };
+
   //closing google component
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();

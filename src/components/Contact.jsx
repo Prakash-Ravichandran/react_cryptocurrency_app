@@ -19,10 +19,9 @@ import {
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
-import { GoogleLogout } from "react-google-login";
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
-import GoogleSignInButton from "./GoogleSignBtn";
+import GoogleSignoutButton from "./GoogleSignoutBtn";
 
 const useStyles = makeStyles(() => {
   return {
@@ -37,7 +36,7 @@ const useStyles = makeStyles(() => {
   };
 });
 
-const Contact = () => {
+const Contact = ({ setToken }) => {
   const classes = useStyles();
   const validationSchema = Yup.object().shape({
     name: Yup.string()
@@ -159,7 +158,6 @@ const Contact = () => {
               {errors.rating?.message}
             </Typography>
           </FormControl>
-          <GoogleSignInButton />
           <Button
             type="submit"
             variant="outlined"
@@ -169,8 +167,7 @@ const Contact = () => {
           >
             Submit
           </Button>
-
-          <GoogleLogout />
+          <GoogleSignoutButton setToken={setToken} />
         </form>
       </Container>
     </>

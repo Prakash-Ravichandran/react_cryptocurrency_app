@@ -1,15 +1,17 @@
-import { Col, Row, Statistic, Typography } from "antd";
+import { Card, Col, Row, Statistic, Typography } from "antd";
 import millify from "millify";
 import React from "react";
+import { CardBody } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
 import Cryptocurrencies from "./Cryptocurrencies";
+import GoogleSignoutButton from "./GoogleSignoutBtn";
 import Loader from "./Loader";
 import NewsComponent from "./NewsComponent";
 
 const { Title } = Typography;
 
-const HomePage = () => {
+const HomePage = ({ setToken }) => {
   const { data, isFetching } = useGetCrytoMarketsQuery(10);
   console.log(data);
   const globalStats = data?.data?.stats;
@@ -29,9 +31,15 @@ const HomePage = () => {
     );
   return (
     <div>
-      <Title level={2} className="heading">
-        Global Crypto Statistics
-      </Title>
+      <Card>
+        <CardBody>
+          <Title level={2} className="heading">
+            Global Crypto Statistics
+          </Title>
+          <GoogleSignoutButton setToken={setToken} />
+        </CardBody>
+      </Card>
+
       <Row gutter={[32, 32]}>
         <Col span={12}>
           <Statistic
