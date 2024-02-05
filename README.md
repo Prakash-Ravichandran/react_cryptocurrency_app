@@ -90,3 +90,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Fix for makeStyles dependecy
 
 [fix-for-makeStyles-dependency](https://stackoverflow.com/questions/69366234/uncaught-error-material-ui-makestyles-is-not-longer-exported-from-mui-materia)
+
+### how to send props through router components
+
+[props-through-router-components](https://ui.dev/react-router-pass-props-to-components)
