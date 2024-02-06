@@ -46,7 +46,7 @@ const GoogleSignoutButton = ({ setToken }) => {
   return (
     <GoogleLogout
       clientId={clientId}
-      buttonText="Logout of"
+      buttonText="Logout"
       onLogoutSuccess={onSuccess}
       onSuccess={onSuccess}
       onFailure={responseGoogle}

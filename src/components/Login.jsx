@@ -51,11 +51,12 @@ async function loginUser(credentials) {
   }).then((data) => data.json());
 }
 
-const Login = ({ setToken, googleSetToken, gToken }) => {
+const Login = ({ setToken, googleSetToken, gToken, user, setUser }) => {
   const onSuccess = (res) => {
     console.log("Auth Sucess login:" + JSON.stringify(res));
     console.log("Access Token login:" + JSON.stringify(res.xc.access_token));
     setToken(res.xc.access_token);
+    setUser(res);
   };
 
   const onFailure = (res) => {

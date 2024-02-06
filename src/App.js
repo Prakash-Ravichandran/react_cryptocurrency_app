@@ -21,10 +21,10 @@ import Signout from "./components/Signout";
 
 const App = () => {
   const [token, setToken] = useState();
-  const [googleToken, googleSetToken] = useState();
+  const [user, setUser] = useState({});
 
   if (!token) {
-    return <Login setToken={setToken} />;
+    return <Login setToken={setToken} user={user} setUser={setUser} />;
   }
 
   return (
@@ -41,7 +41,13 @@ const App = () => {
                   <Routes>
                     <Route
                       path="/"
-                      element={<HomePage setToken={setToken} />}
+                      element={
+                        <HomePage
+                          setToken={setToken}
+                          user={user}
+                          setUser={setUser}
+                        />
+                      }
                     ></Route>
                     <Route
                       exact
