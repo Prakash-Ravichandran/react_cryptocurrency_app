@@ -64,7 +64,7 @@ const App = () => {
 
                     <Route
                       exact
-                      path="/newscomp"
+                      path="/news"
                       element={<NewsComponent />}
                     ></Route>
                     <Route

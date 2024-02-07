@@ -10,6 +10,7 @@ import { Avatar, Button, Menu, Typography } from "antd";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import icon from "../images/cryptocurrency.png";
+const { Title } = Typography;
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(true);
@@ -59,7 +60,7 @@ const Navbar = () => {
             <Link to="/exchanges">Exchanges</Link>
           </Menu.Item>
           <Menu.Item icon={<BulbOutlined />}>
-            <Link to="/newscomp">News</Link>
+            <Link to="/news">News</Link>
           </Menu.Item>
           <Menu.Item icon={<ContactMailOutlined />}>
             <Link to="/contact">Contact</Link>
