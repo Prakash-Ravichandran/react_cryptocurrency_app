@@ -1,9 +1,11 @@
+import { CaretDownOutlined, CaretUpOutlined } from "@ant-design/icons";
 import { Card, Col, Row, Typography } from "antd";
 import millify from "millify";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
 import Loader from "./Loader";
+
 const { Title } = Typography;
 
 const Crytocurrencies = ({ simplified }) => {
@@ -51,7 +53,7 @@ const Crytocurrencies = ({ simplified }) => {
             <Col xs={24} sm={12} lg={6} key={currency.id}>
               <Link to={`/crypto/${currency.uuid}`}>
                 <Card
-                  className="card"
+                  className="card card-shadow "
                   title={`${currency.rank}.${currency.name}`}
                   extra={
                     <img
@@ -67,8 +69,17 @@ const Crytocurrencies = ({ simplified }) => {
                     <span
                       className={currency.price < 0 ? "warning" : "success"}
                     >
-                      {millify(currency.price)}
+                      {`$`} {millify(currency.price)}
                     </span>
+                    {currency.price < 0 ? (
+                      <CaretDownOutlined
+                        className={currency.price < 0 ? "warning" : "success"}
+                      />
+                    ) : (
+                      <CaretUpOutlined
+                        className={currency.price < 0 ? "warning" : "success"}
+                      />
+                    )}
                   </Title>
 
                   <Title level={5} italic type="secondary">
@@ -77,7 +88,20 @@ const Crytocurrencies = ({ simplified }) => {
                       className={currency.marketCap < 0 ? "warning" : "success"}
                     >
                       {millify(currency.marketCap)}
-                    </span>{" "}
+                    </span>
+                    {currency.marketCap < 0 ? (
+                      <CaretDownOutlined
+                        className={
+                          currency.marketCap < 0 ? "warning" : "success"
+                        }
+                      />
+                    ) : (
+                      <CaretUpOutlined
+                        className={
+                          currency.marketCap < 0 ? "warning" : "success"
+                        }
+                      />
+                    )}
                   </Title>
                   <Title level={5} italic type="secondary">
                     Daily Change:
@@ -86,6 +110,15 @@ const Crytocurrencies = ({ simplified }) => {
                     >
                       {millify(currency.change)}
                     </span>
+                    {currency.change < 0 ? (
+                      <CaretDownOutlined
+                        className={currency.change < 0 ? "warning" : "success"}
+                      />
+                    ) : (
+                      <CaretUpOutlined
+                        className={currency.change < 0 ? "warning" : "success"}
+                      />
+                    )}
                   </Title>
                 </Card>
               </Link>

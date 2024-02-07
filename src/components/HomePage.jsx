@@ -32,7 +32,7 @@ const HomePage = ({ setToken, user, setUser }) => {
     );
   return (
     <div>
-      <Card>
+      <Card className="card-shadow">
         <CardBody>
           <Row justify={"space-between"} align={"middle"}>
             <Title level={2} className="heading">

@@ -387,6 +387,9 @@ a:hover {
   height: 100%;
   max-height: 215px;
 }
+.card-shadow {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
 
 .ant-card-head {
   height: 100%;
