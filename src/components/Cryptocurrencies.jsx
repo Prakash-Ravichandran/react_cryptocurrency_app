@@ -1,9 +1,10 @@
-import { Card, Col, Row } from "antd";
+import { Card, Col, Row, Typography } from "antd";
 import millify from "millify";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
 import Loader from "./Loader";
+const { Title } = Typography;
 
 const Crytocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
@@ -61,9 +62,31 @@ const Crytocurrencies = ({ simplified }) => {
                   }
                   key={currency.id}
                 >
-                  <p>Price: {millify(currency.price)}</p>
-                  <p>Market Cap: {millify(currency.marketCap)}</p>
-                  <p>Daily Change: {millify(currency.change)}</p>
+                  <Title level={5} italic type="secondary">
+                    Price:{" "}
+                    <span
+                      className={currency.price < 0 ? "warning" : "success"}
+                    >
+                      {millify(currency.price)}
+                    </span>
+                  </Title>
+
+                  <Title level={5} italic type="secondary">
+                    Market Cap:{" "}
+                    <span
+                      className={currency.marketCap < 0 ? "warning" : "success"}
+                    >
+                      {millify(currency.marketCap)}
+                    </span>{" "}
+                  </Title>
+                  <Title level={5} italic type="secondary">
+                    Daily Change:
+                    <span
+                      className={currency.change < 0 ? "warning" : "success"}
+                    >
+                      {millify(currency.change)}
+                    </span>
+                  </Title>
                 </Card>
               </Link>
             </Col>

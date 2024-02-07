@@ -59,9 +59,6 @@ const Navbar = () => {
             <Link to="/exchanges">Exchanges</Link>
           </Menu.Item>
           <Menu.Item icon={<BulbOutlined />}>
-            <Link to="/news">News=to be removed</Link>
-          </Menu.Item>
-          <Menu.Item icon={<BulbOutlined />}>
             <Link to="/newscomp">News</Link>
           </Menu.Item>
           <Menu.Item icon={<ContactMailOutlined />}>

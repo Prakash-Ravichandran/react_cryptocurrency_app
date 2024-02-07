@@ -463,3 +463,13 @@ a:hover {
 .dark {
   color: #000;
 }
+
+/* HomePage app currency card styles*/
+
+.warning {
+  color: red;
+}
+
+.success {
+  color: green;
+}

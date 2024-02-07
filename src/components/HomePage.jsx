@@ -38,11 +38,11 @@ const HomePage = ({ setToken, user, setUser }) => {
             <Title level={2} className="heading">
               Global Crypto Statistics
             </Title>
-            <GoogleSignoutButton setToken={setToken} />
+            <GoogleSignoutButton setToken={setToken} user={user} />
           </Row>
         </CardBody>
         <Row justify={"flex-start"} align={"middle"}>
-          <Title level={3} className="heading" gutter={[6, 6]}>
+          <Title level={3} className="heading">
             {`Welcome ! ${user.profileObj.name}`}
           </Title>
           <Avatar src={user.profileObj.imageUrl}></Avatar>

@@ -26,7 +26,7 @@ const responseGoogle = (response) => {
   console.log("Failed: " + response);
 };
 
-const GoogleSignoutButton = ({ setToken }) => {
+const GoogleSignoutButton = ({ setToken, user }) => {
   const onSuccess = (res) => {
     console.log("Logout success:" + res);
 
@@ -44,14 +44,16 @@ const GoogleSignoutButton = ({ setToken }) => {
     gapi.load("client:auth2", start);
   });
   return (
-    <GoogleLogout
-      clientId={clientId}
-      buttonText="Logout"
-      onLogoutSuccess={onSuccess}
-      onSuccess={onSuccess}
-      onFailure={responseGoogle}
-      cookiePolicy={"single_host_origin"}
-    />
+    <>
+      <GoogleLogout
+        clientId={clientId}
+        buttonText="Logout"
+        onLogoutSuccess={onSuccess}
+        onSuccess={onSuccess}
+        onFailure={responseGoogle}
+        cookiePolicy={"single_host_origin"}
+      />
+    </>
   );
 };
 export default GoogleSignoutButton;

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 
 import { gapi } from "gapi-script";
 import { GoogleLogin } from "react-google-login";
+import "./App.css";
 
 const clientID =
   "728562345073-fkrij7aekj2h2qgqjgsro44cjsovi4oi.apps.googleusercontent.com";
@@ -40,6 +41,7 @@ const GoogleSignInButton = ({ googleSetToken }) => {
       onSuccess={onSuccess}
       onFailure={onFailure}
       cookiePolicy={"single_host_origin"}
+      className={"loginBtn--google"}
     />
   );
 };

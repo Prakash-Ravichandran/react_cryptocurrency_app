@@ -6,7 +6,6 @@ import {
   Exchanges,
   HomePage,
   Navbar,
-  News,
 } from "./components";
 
 import NewsComponent from "./components/NewsComponent";
@@ -63,7 +62,6 @@ const App = () => {
                       <Route path=":coinId" element={<CryptoDetails />} />
                     </Route>
 
-                    <Route exact path="/news" element={<News />}></Route>
                     <Route
                       exact
                       path="/newscomp"
