@@ -36,7 +36,7 @@ const useStyles = makeStyles(() => {
   };
 });
 
-const Contact = ({ setToken }) => {
+const Contact = ({ setToken, user }) => {
   const classes = useStyles();
   const validationSchema = Yup.object().shape({
     name: Yup.string()
@@ -82,6 +82,7 @@ const Contact = ({ setToken }) => {
             fullWidth
             required
             className={classes.field}
+            value={user.profileObj.name}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -103,6 +104,7 @@ const Contact = ({ setToken }) => {
             fullWidth
             required
             className={classes.field}
+            value={user.profileObj.email}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
