@@ -135,7 +135,7 @@ a:hover {
     font-size: 1.4rem !important;
   }
   .show-more {
-    font-size: 1.3rem !important;
+    font-size: 1rem !important;
   }
 }
 
@@ -455,6 +455,12 @@ a:hover {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mr-5 {
+  margin-right: 5px;
 }
 
 /* Google button success */

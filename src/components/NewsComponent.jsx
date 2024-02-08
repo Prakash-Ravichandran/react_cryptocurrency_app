@@ -158,8 +158,8 @@ const NewsComponent = () => {
         <Col span={24}>
           <Card className="">
             <CardBody>
-              <Row justify={"flex-start"} align={"middle"}>
-                <Title level={5} italic>
+              <Row justify={"flex-start"} align={"middle"} className="mb-10 ">
+                <Title level={5} italic className="mr-5 link">
                   Select a news Category :
                 </Title>
                 <Select
@@ -180,7 +180,7 @@ const NewsComponent = () => {
                   ))}
                 </Select>
               </Row>
-              <Title className="news-title" level={5} italic>
+              <Title className="news-title link" level={5} italic>
                 Your Selection of news category : {newsCategory}
               </Title>
             </CardBody>
