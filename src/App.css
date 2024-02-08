@@ -307,6 +307,9 @@ a:hover {
 .news-title {
   width: 70%;
 }
+.link {
+  color: #0071bd !important;
+}
 
 .news-image-container .img {
   width: 100px;
@@ -424,7 +427,7 @@ a:hover {
 
 .news-row .ant-card {
   height: 100%;
-  max-height: 300px;
+  max-height: 320px;
 }
 
 .news-row .ant-card a {

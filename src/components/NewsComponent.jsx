@@ -1,5 +1,6 @@
 import { Avatar, Card, Col, Row, Select, Typography } from "antd";
 import React, { useState } from "react";
+import { CardBody } from "react-bootstrap";
 import { useGetgeneralNewsApiQuery } from "../services/generalNewsApi";
 import Loader from "./Loader";
 const { Title, Text } = Typography;
@@ -155,23 +156,35 @@ const NewsComponent = () => {
     <>
       <Row gutter={[24, 24]} className="news-row">
         <Col span={24}>
-          <Text>Select a news Category : </Text>
-          <Select
-            showSearch
-            className="select-news"
-            placeholder="Select a news category"
-            optionFilterProp="children"
-            onChange={(value) => setNewsCategory(value)}
-            filterOption={(input, option) =>
-              option.children.toLowerCase().indexOf(input.toLowerCase())
-            }
-          >
-            {category.map((value, id) => (
-              <Option value={value} key={id}>
-                {value}
-              </Option>
-            ))}
-          </Select>
+          <Card className="">
+            <CardBody>
+              <Row justify={"flex-start"} align={"middle"}>
+                <Title level={5} italic>
+                  Select a news Category :
+                </Title>
+                <Select
+                  showSearch
+                  className="select-news"
+                  placeholder="Select a news category"
+                  optionFilterProp="children"
+                  onChange={(value) => setNewsCategory(value)}
+                  filterOption={(input, option) =>
+                    option.children.toLowerCase().indexOf(input.toLowerCase())
+                  }
+                  value={newsCategory}
+                >
+                  {category.map((value, id) => (
+                    <Option value={value} key={id} className="news-title">
+                      {value}
+                    </Option>
+                  ))}
+                </Select>
+              </Row>
+              <Title className="news-title" level={5} italic>
+                Your Selection of news category : {newsCategory}
+              </Title>
+            </CardBody>
+          </Card>
         </Col>
         {/* <Col span={24}>
           <Select
@@ -213,23 +226,33 @@ const NewsComponent = () => {
           return (
             <>
               <Col xs={24} sm={12} lg={8} key={id}>
-                <Card key={id}>
+                <Card key={id} className="card-shadow">
                   <a href={value?.url} target="_blank" rel="noreferrer">
                     <div className="news-image-container">
-                      <Title className="news-title" level={4}>
+                      <Title className="news-title" level={4} italic>
                         {value?.source?.name}
                       </Title>
                       <Avatar src={value?.image || demoImage}></Avatar>
                     </div>
 
-                    <p className="news-description">{value?.description}</p>
+                    {/* <p className="news-description">{value?.description}</p> */}
+                    <Title
+                      className="news-description link"
+                      level={5}
+                      color="blue"
+                    >
+                      {value?.description}
+                    </Title>
                     <div className="news-image-container news-image-center">
                       <div>
                         <img src={value?.image || demoImage}></img>
                       </div>
                     </div>
                     <div className="provider-container">
-                      <h3 className="news-description">{`${value?.content}`}</h3>
+                      {/* <h3 className="news-description">{`${value?.content}`}</h3> */}
+                      <Title className="news-description" level={5}>
+                        {value?.content}
+                      </Title>
                     </div>
                   </a>
                 </Card>

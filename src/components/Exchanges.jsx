@@ -86,6 +86,7 @@ const Exchanges = () => {
             filterOption={(input, option) =>
               option.children.toLowerCase().indexOf(input.toLowerCase())
             }
+            value={currencyName}
           >
             <Option value="crytpocurrency">Cryptocurrency</Option>
             {currencyDropdown?.data?.map((coin, index) => {
