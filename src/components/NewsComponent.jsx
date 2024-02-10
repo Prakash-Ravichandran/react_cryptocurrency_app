@@ -255,6 +255,9 @@ const NewsComponent = () => {
                       </Title>
                     </div>
                   </a>
+                  <Title level={5} type="secondary">{`Published At: ${new Date(
+                    value?.publishedAt
+                  ).toLocaleDateString()}`}</Title>
                   <Button type="primary" className="btn-ellipsis">
                     Visit : {value?.source?.name}
                   </Button>
