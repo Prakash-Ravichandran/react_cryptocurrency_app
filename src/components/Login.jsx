@@ -20,8 +20,12 @@ import * as Yup from "yup";
 // google SignIn Imports
 import { useEffect } from "react";
 
+import { Avatar, Space } from "antd";
 import { gapi } from "gapi-script";
 import { GoogleLogin } from "react-google-login";
+import icon from "../images/bitcoin_btc.svg";
+
+const { Title } = Typography;
 
 const clientID =
   "728562345073-fkrij7aekj2h2qgqjgsro44cjsovi4oi.apps.googleusercontent.com";
@@ -186,7 +190,20 @@ const Login = ({ setToken, googleSetToken, gToken, user, setUser }) => {
     <>
       <Container className={classes.container}>
         <form>
-          <FormLabel>{" Login Form"}</FormLabel>
+          <Space direction="vertical" align="center">
+            <Space>
+              <Avatar src={icon} size="large" />
+              <FormLabel style={{ color: "black" }}>
+                {"Welcome to CryptoMarkets !"}
+              </FormLabel>
+            </Space>
+
+            <FormLabel>{"Guest Login"}</FormLabel>
+            <GoogleSignInButton />
+            <FormLabel>{"(or)"}</FormLabel>
+            <FormLabel>{"Developer/Localhost Login"}</FormLabel>
+          </Space>
+
           <TextField
             label={"UserName"}
             name={"name"}
@@ -271,8 +288,6 @@ const Login = ({ setToken, googleSetToken, gToken, user, setUser }) => {
           >
             Login
           </Button>
-          <p>Login With Google</p>
-          <GoogleSignInButton />
         </form>
       </Container>
     </>
