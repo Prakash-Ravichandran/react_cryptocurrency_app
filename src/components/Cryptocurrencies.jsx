@@ -1,5 +1,5 @@
 import { CaretDownOutlined, CaretUpOutlined } from "@ant-design/icons";
-import { Card, Col, Row, Typography } from "antd";
+import { Button, Card, Col, Row, Typography } from "antd";
 import millify from "millify";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -53,7 +53,7 @@ const Crytocurrencies = ({ simplified }) => {
             <Col xs={24} sm={12} lg={6} key={currency.id}>
               <Link to={`/crypto/${currency.uuid}`}>
                 <Card
-                  className="card card-shadow "
+                  className="card card-shadow"
                   title={`${currency.rank}.${currency.name}`}
                   extra={
                     <img
@@ -120,6 +120,9 @@ const Crytocurrencies = ({ simplified }) => {
                       />
                     )}
                   </Title>
+                  <Button type="primary" className="btn-ellipsis">
+                    Visit - {currency.symbol}
+                  </Button>
                 </Card>
               </Link>
             </Col>

@@ -395,7 +395,7 @@ a:hover {
 
 .card {
   height: 100%;
-  max-height: 215px;
+  max-height: 250px;
 }
 .card-shadow {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -461,6 +461,12 @@ a:hover {
 }
 .mr-5 {
   margin-right: 5px;
+}
+
+.btn-ellipsis span {
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
 }
 
 /* Google button success */
