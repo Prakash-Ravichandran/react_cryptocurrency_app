@@ -463,6 +463,14 @@ a:hover {
   margin-right: 5px;
 }
 
+.router-item {
+  font-size: larger;
+  font-family: sans-serif;
+}
+.font-sanserif {
+  font-family: sans-serif;
+}
+
 .btn-ellipsis span {
   overflow: hidden !important;
   white-space: nowrap !important;
@@ -497,4 +505,13 @@ a:hover {
 
 .success {
   color: green;
+}
+
+.social-icons {
+  color: white;
+  font-size: larger;
+}
+
+.social-icons-color {
+  color: #fff;
 }

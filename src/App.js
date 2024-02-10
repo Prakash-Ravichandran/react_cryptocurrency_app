@@ -10,11 +10,13 @@ import {
 
 import NewsComponent from "./components/NewsComponent";
 
-import { Layout, Space, Typography } from "antd";
+import { Layout } from "antd";
 import { Provider } from "react-redux";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import "./App.css";
 import { store } from "./app/store";
+import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Signout from "./components/Signout";
 
@@ -81,7 +83,8 @@ const App = () => {
                   </Routes>
                 </div>
               </Layout>
-              <div className="footer">
+              <Footer />
+              {/* <div className="footer">
                 <Typography.Title
                   level={5}
                   style={{ color: "white", textAlign: "center" }}
@@ -96,7 +99,7 @@ const App = () => {
                   <Link to="/exchanges">Exhanges</Link>
                   <Link to="/news">News</Link>
                 </Space>
-              </div>
+              </div> */}
             </div>
           </div>
         </Provider>
