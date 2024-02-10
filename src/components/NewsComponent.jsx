@@ -1,4 +1,4 @@
-import { Avatar, Card, Col, Row, Select, Typography } from "antd";
+import { Avatar, Button, Card, Col, Row, Select, Typography } from "antd";
 import React, { useState } from "react";
 import { CardBody } from "react-bootstrap";
 import { useGetgeneralNewsApiQuery } from "../services/generalNewsApi";
@@ -255,6 +255,9 @@ const NewsComponent = () => {
                       </Title>
                     </div>
                   </a>
+                  <Button type="primary" className="btn-ellipsis">
+                    Visit : {value?.source?.name}
+                  </Button>
                 </Card>
               </Col>
             </>
