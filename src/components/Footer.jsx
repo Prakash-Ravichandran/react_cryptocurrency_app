@@ -32,10 +32,9 @@ const Footer = () => {
             level={5}
             style={{ color: "white", textAlign: "center" }}
           >
-            <Link to="/">
+            <Link to="/" style={{ color: "white", textAlign: "center" }}>
               Crypto Markets <br />
             </Link>
-            All Rights Reserved @2024
           </Typography.Title>
         </div>
 

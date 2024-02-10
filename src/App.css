@@ -515,3 +515,8 @@ a:hover {
 .social-icons-color {
   color: #fff;
 }
+
+.alignment {
+  position: fixed;
+  bottom: 0px;
+}
