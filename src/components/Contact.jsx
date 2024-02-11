@@ -18,10 +18,12 @@ import {
   Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React from "react";
+import { Modal } from "antd";
+import { React, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-import GoogleSignoutButton from "./GoogleSignoutBtn";
+import Header from "./Header";
 
 const useStyles = makeStyles(() => {
   return {
@@ -36,8 +38,13 @@ const useStyles = makeStyles(() => {
   };
 });
 
-const Contact = ({ setToken, user }) => {
+const Contact = ({ setToken, user, setUser }) => {
+  const navigate = useNavigate();
   const classes = useStyles();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [rating, setRating] = useState("");
+  const [formData, setFormData] = useState({});
+
   const validationSchema = Yup.object().shape({
     name: Yup.string()
       .required("Fullname is required")
@@ -62,13 +69,34 @@ const Contact = ({ setToken, user }) => {
     resolver: yupResolver(validationSchema),
   });
 
+  const handleRadioGroup = (event) => {
+    console.log(setRating(event.target.value));
+  };
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+    navigate("/");
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   const onSubmit = (data) => {
     console.log(JSON.stringify(data, null, 2));
+    setFormData(data);
+    showModal();
   };
 
   return (
     <>
       <Container className={classes.container}>
+        <Header user={user} setToken={setToken} setUser={setUser} />
+
         <form>
           <FormLabel>
             {" "}
@@ -118,6 +146,7 @@ const Contact = ({ setToken, user }) => {
           <Typography variant="subtitle2" color="error">
             {errors.email?.message}
           </Typography>
+
           <TextField
             placeholder="Describe the best about your favourite bitcoin !"
             label="Likes"
@@ -142,18 +171,22 @@ const Contact = ({ setToken, user }) => {
             {errors.description ? errors.description.message : null}
           </Typography>
           <FormControl className={classes.field}>
-            <FormLabel>Your rating for the cryptocurrencies :</FormLabel>
+            <FormLabel id="demo-controlled-radio-buttons-group">
+              Your rating for the cryptocurrencies :
+            </FormLabel>
             <RadioGroup
               name="rating"
-              value={"5"}
+              value={rating}
+              onChange={handleRadioGroup}
               {...register("rating")}
               error={errors.rating ? true : false}
+              aria-labelledby="demo-controlled-radio-buttons-group"
             >
-              <FormControlLabel value={"5"} control={<Radio />} label="5" />
-              <FormControlLabel value={"4"} control={<Radio />} label="4" />
-              <FormControlLabel value={"3"} control={<Radio />} label="3" />
-              <FormControlLabel value={"2"} control={<Radio />} label="2" />
-              <FormControlLabel value={"1"} control={<Radio />} label="1" />
+              <FormControlLabel value={5} control={<Radio />} label="5" />
+              <FormControlLabel value={4} control={<Radio />} label="4" />
+              <FormControlLabel value={3} control={<Radio />} label="3" />
+              <FormControlLabel value={2} control={<Radio />} label="2" />
+              <FormControlLabel value={1} control={<Radio />} label="1" />
             </RadioGroup>
 
             <Typography variant="subtitle2" color="error">
@@ -169,8 +202,19 @@ const Contact = ({ setToken, user }) => {
           >
             Submit
           </Button>
-          <GoogleSignoutButton setToken={setToken} />
         </form>
+
+        <Modal
+          title="Your Feedback on CryptoMarkets was collected"
+          open={isModalOpen}
+          onOk={handleOk}
+          onCancel={handleCancel}
+        >
+          <p>{formData.email}</p>
+          <p>{formData.name}</p>
+          <p>{formData.description}</p>
+          <p>{formData.rating}</p>
+        </Modal>
       </Container>
     </>
   );

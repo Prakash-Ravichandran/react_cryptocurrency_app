@@ -90,7 +90,13 @@ const App = () => {
                     <Route
                       exact
                       path="/contact"
-                      element={<Contact setToken={setToken} user={user} />}
+                      element={
+                        <Contact
+                          setToken={setToken}
+                          user={user}
+                          setUser={setUser}
+                        />
+                      }
                     ></Route>
                     <Route
                       exact
