@@ -531,3 +531,8 @@ a:hover {
   padding: 20px;
   margin-top: 30px;
 }
+
+.exchange-col-title {
+  font-family: sans-serif;
+  color: blue;
+}

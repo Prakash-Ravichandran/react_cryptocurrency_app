@@ -2,6 +2,7 @@ import { Avatar, Button, Card, Col, Row, Select, Typography } from "antd";
 import React, { useState } from "react";
 import { CardBody } from "react-bootstrap";
 import { useGetgeneralNewsApiQuery } from "../services/generalNewsApi";
+import Header from "./Header";
 import Loader from "./Loader";
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -106,7 +107,7 @@ const countries = [
   },
 ];
 
-const NewsComponent = () => {
+const NewsComponent = ({ user, setToken, setUser }) => {
   const [newsCategory, setNewsCategory] = useState("world");
   const [country, setCountry] = useState("us");
   const [symbol_lang, setSymbolLang] = useState({ symbol: "us", lang: "en" });
@@ -154,6 +155,8 @@ const NewsComponent = () => {
     );
   return (
     <>
+      <Header user={user} setToken={setToken} setUser={setUser} />
+
       <Row gutter={[24, 24]} className="news-row">
         <Col span={24}>
           <Card className="">

@@ -8,7 +8,7 @@ import Loader from "./Loader";
 
 const { Title } = Typography;
 
-const Crytocurrencies = ({ simplified }) => {
+const Crytocurrencies = ({ simplified, user, setUser, setToken }) => {
   const count = simplified ? 10 : 100;
   const { data: cryptoList, isFetching } = useGetCrytoMarketsQuery(count);
 
@@ -51,6 +51,8 @@ const Crytocurrencies = ({ simplified }) => {
         {cryptos?.map((currency) => {
           return (
             <Col xs={24} sm={12} lg={6} key={currency.id}>
+              {/* <Header user={user} setUser={setUser} setToken={setToken} /> */}
+
               <Link to={`/crypto/${currency.uuid}`}>
                 <Card
                   className="card card-shadow"

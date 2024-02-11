@@ -53,12 +53,24 @@ const App = () => {
                     <Route
                       exact
                       path="/exchanges"
-                      element={<Exchanges />}
+                      element={
+                        <Exchanges
+                          setToken={setToken}
+                          user={user}
+                          setUser={setUser}
+                        />
+                      }
                     ></Route>
                     <Route
                       exact
                       path="/cryptocurrencies"
-                      element={<Cryptocurrencies />}
+                      element={
+                        <Cryptocurrencies
+                        // user={user}
+                        // setUser={setUser}
+                        // setToken={setToken}
+                        />
+                      }
                     ></Route>
                     <Route path="crypto">
                       <Route path=":coinId" element={<CryptoDetails />} />
@@ -67,7 +79,13 @@ const App = () => {
                     <Route
                       exact
                       path="/news"
-                      element={<NewsComponent />}
+                      element={
+                        <NewsComponent
+                          setToken={setToken}
+                          user={user}
+                          setUser={setUser}
+                        />
+                      }
                     ></Route>
                     <Route
                       exact

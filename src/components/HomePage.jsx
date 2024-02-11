@@ -1,11 +1,11 @@
-import { Avatar, Card, Col, Row, Statistic, Typography } from "antd";
+import { Card, Col, Row, Statistic, Typography } from "antd";
 import millify from "millify";
 import React from "react";
 import { CardBody } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useGetCrytoMarketsQuery } from "../services/cryptoMarketsApi";
 import Cryptocurrencies from "./Cryptocurrencies";
-import GoogleSignoutButton from "./GoogleSignoutBtn";
+import Header from "./Header";
 import Loader from "./Loader";
 import NewsComponent from "./NewsComponent";
 
@@ -32,21 +32,22 @@ const HomePage = ({ setToken, user, setUser }) => {
     );
   return (
     <div>
+      <Header user={user} setToken={setToken} setUser={setUser} />
       <Card className="card-shadow">
         <CardBody>
           <Row justify={"space-between"} align={"middle"}>
             <Title level={2} className="heading" type="success" italic>
               Global Crypto Statistics
             </Title>
-            <GoogleSignoutButton setToken={setToken} user={user} />
+            {/* <GoogleSignoutButton setToken={setToken} user={user} /> */}
           </Row>
         </CardBody>
-        <Row justify={"flex-start"} align={"middle"}>
+        {/* <Row justify={"flex-start"} align={"middle"}>
           <Title level={3} className="heading">
             {`Welcome ! ${user.profileObj.name}`}
           </Title>
           <Avatar src={user.profileObj.imageUrl}></Avatar>
-        </Row>
+        </Row> */}
         <Row gutter={[32, 32]}>
           <Col span={12}>
             <Statistic
