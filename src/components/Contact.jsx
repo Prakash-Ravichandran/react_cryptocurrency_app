@@ -8,22 +8,18 @@ import {
 import {
   Button,
   Container,
-  FormControl,
-  FormControlLabel,
   FormLabel,
   InputAdornment,
-  Radio,
-  RadioGroup,
   TextField,
-  Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { Modal } from "antd";
+import { Modal, Typography } from "antd";
 import { React, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import Header from "./Header";
+const { Title } = Typography;
 
 const useStyles = makeStyles(() => {
   return {
@@ -55,9 +51,9 @@ const Contact = ({ setToken, user, setUser }) => {
       .required("Description is required")
       .min(50, "Description must be at least 50 characters")
       .max(100, "Username must not exceed 100 characters"),
-    rating: Yup.string().required(
-      "Please select the rating for a cryptocurrency"
-    ),
+    // rating: Yup.string().required(
+    //   "Please select the rating for a cryptocurrency"
+    // ),
   });
 
   const {
@@ -170,13 +166,13 @@ const Contact = ({ setToken, user, setUser }) => {
           <Typography variant="subtitle2" color="error">
             {errors.description ? errors.description.message : null}
           </Typography>
-          <FormControl className={classes.field}>
+          {/* <FormControl className={classes.field}>
             <FormLabel id="demo-controlled-radio-buttons-group">
               Your rating for the cryptocurrencies :
             </FormLabel>
             <RadioGroup
               name="rating"
-              value={rating}
+              value={5}
               onChange={handleRadioGroup}
               {...register("rating")}
               error={errors.rating ? true : false}
@@ -192,7 +188,7 @@ const Contact = ({ setToken, user, setUser }) => {
             <Typography variant="subtitle2" color="error">
               {errors.rating?.message}
             </Typography>
-          </FormControl>
+          </FormControl> */}
           <Button
             type="submit"
             variant="outlined"
@@ -210,10 +206,14 @@ const Contact = ({ setToken, user, setUser }) => {
           onOk={handleOk}
           onCancel={handleCancel}
         >
-          <p>{formData.email}</p>
-          <p>{formData.name}</p>
-          <p>{formData.description}</p>
-          <p>{formData.rating}</p>
+          <Title level={5} italic>{`Email: ${formData.email}`}</Title>
+          <Title level={5} italic>
+            {`Name: ${formData.name}`}
+          </Title>
+          <Title
+            level={5}
+            italic
+          >{`Description: ${formData.description}`}</Title>
         </Modal>
       </Container>
     </>

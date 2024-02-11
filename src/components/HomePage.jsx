@@ -36,7 +36,7 @@ const HomePage = ({ setToken, user, setUser }) => {
       <Card className="card-shadow">
         <CardBody>
           <Row justify={"space-between"} align={"middle"}>
-            <Title level={2} className="heading" type="success" italic>
+            <Title level={2} className="heading" type="primary" italic>
               Global Crypto Statistics
             </Title>
             {/* <GoogleSignoutButton setToken={setToken} user={user} /> */}
@@ -90,7 +90,7 @@ const HomePage = ({ setToken, user, setUser }) => {
       </Card>
 
       <div className="home-heading-container">
-        <Title level={2} className="home-title" type="success" italic>
+        <Title level={2} className="home-title" type="primary" italic>
           Top 10 Cryptocurrencies in the world
         </Title>
         <Title level={3} className="show-more">
@@ -99,7 +99,7 @@ const HomePage = ({ setToken, user, setUser }) => {
       </div>
       <Cryptocurrencies simplified />
       <div className="home-heading-container">
-        <Title level={2} className="home-title" type="success" italic>
+        <Title level={2} className="home-title" type="primary" italic>
           Latest News
         </Title>
         <Title level={4} className="show-more">
