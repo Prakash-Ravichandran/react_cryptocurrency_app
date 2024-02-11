@@ -106,7 +106,7 @@ const HomePage = ({ setToken, user, setUser }) => {
           <Link to="/news">Show More</Link>
         </Title>
       </div>
-      <NewsComponent />
+      <NewsComponent simplified={true} />
     </div>
   );
 };
