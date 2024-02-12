@@ -1,9 +1,9 @@
 <h1 align="center">
-Easy Fix
+CRYPTOMARKETS
 </h1>
 
 <p align="center">
-  The ideal platform to find beginner-friendly issues. <br /> Designed to inspire and encourage individuals to initiate their contributions to the open source community.
+  The ideal platform to find different crypto currencies & their exchanges. <br /> Designed to inspire and encourage individuals to initiate their contributions to the open source community.
 </p>
 
 ## TechStack Used
