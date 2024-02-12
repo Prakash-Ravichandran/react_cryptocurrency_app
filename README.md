@@ -91,8 +91,8 @@ Remember, Good PR makes you a Good contributor !
 
 ## Current Contributors
 
-<a href="https://github.com/vatsalsinghkv/easy-fix/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=vatsalsinghkv/easy-fix" />
+<a href="https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Prakash-Ravichandran/react_cryptocurrency_app" />
 </a>
 
 ## Contact
