@@ -1,73 +1,117 @@
-# Getting Started with Create React App
+<h1 align="center">
+Easy Fix
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  The ideal platform to find beginner-friendly issues. <br /> Designed to inspire and encourage individuals to initiate their contributions to the open source community.
+</p>
 
-## Available Scripts
+<!-- <p align="center">
+  <a href="https://choosealicense.com/licenses/mit/">
+    <img src="https://img.shields.io/badge/License-MIT-brightgreen"/ >
+  </a>
+  <img src="https://img.shields.io/badge/Version-1.3.1-blue"/ >
+</p>
+ -->
 
-In the project directory, you can run:
+[![Preview](https://user-images.githubusercontent.com/68834718/258658579-017bd2d3-20ab-4fa5-bac4-f67d671a70ea.png)](https://easy-fix.vercel.app/)
 
-### `npm start`
+## Built With
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [React.js](https://react.dev/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Github API](https://docs.github.com/en/rest)
+- [Vitest](https://vitest.dev/) - Testing library
+- [Iconify](https://icon-sets.iconify.design/) - Icon library
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Contributing
 
-### `npm test`
+**Join Our Discord:** [https://discord.gg/St2dHg9YwA](https://discord.gg/St2dHg9YwA)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Remember, Good PR makes you a Good contributor !
 
-### `npm run build`
+### 1. Setting up the project locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [yarn](https://yarnpkg.com) installed on your computer)**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Fork this repository and clone the project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/<YOUR USERNAME>/easy-fix.git
+   ```
 
-### `npm run eject`
+2. Go to the project directory
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   cd easy-fix
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Install dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   yarn
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Start the server
 
-## Learn More
+   ```bash
+   yarn dev
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- To change the **configuration**, edit `src/lib/utils/config.js`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 2. Contributing Guidelines
 
-### Code Splitting
+- [Contributing Guidelines](/CONTRIBUTING.md) to be followed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## The Process
 
-### Analyzing the Bundle Size
+### User Stories
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- As a user, I want to be able to find easy issues with labels like `good-first-issue` and `easy`.
+- As a user, I want to filter issues based on programming languages.
+- As a user, I want to view the labels associated with a specific issue.
+- As a user, I want to view key information about the repository related to a specific issue.
 
-### Making a Progressive Web App
+### Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Data Fetching:** App fetches the relevant issues from api.
+- **Pagination:** App renders the specific number of issues per page.
+- **Filter:** App fetches the required issues according to the selected language.
 
-### Advanced Configuration
+### Work Flow
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+[![Easy Fix work flow diagram](https://user-images.githubusercontent.com/68834718/258657790-fd1b7ba5-2171-4b51-b49a-afefaa68b9c5.png)](https://lucid.app/lucidchart/e6e01616-e79e-4819-bc64-a23cbbe53944/edit?viewport_loc=-412%2C-279%2C2727%2C1582%2C0_0&invitationId=inv_f6a6111b-2916-409c-8bb6-53ce6a182e44)
 
-### Deployment
+## Continuous Development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [ ] Add more filters such as filter by labels.
+- [ ] Migrate to typescript
+- [ ] Add test cases
 
-### `npm run build` fails to minify
+## Current Contributors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href="https://github.com/vatsalsinghkv/easy-fix/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=vatsalsinghkv/easy-fix" />
+</a>
+
+## Contact
+
+- Discord - [https://discord.gg/St2dHg9YwA](https://discord.gg/St2dHg9YwA)
+- Website - [vatsalsinghkv.vercel.app](https://vatsalsinghkv.vercel.app)
+- Github - [@vatsalsinghkv](https://github.com/vatsalsinghkv)
+- LinkedIn - [@vatsalsinghkv](https://www.linkedin.com/in/vatsalsinghkv/)
+- Twitter - [@vatsalsinghkv](https://www.twitter.com/vatsalsinghkv)
+- Instagram - [@vatsalsinghkv](https://www.instagram.com/vatsalsinghkv)
+
+## Acknowledgements
+
+- [https://goodfirstissue.dev/](https://goodfirstissue.dev/) - Design Inspiration
+- [https://brittanychiang.com/](https://brittanychiang.com/) - Design Inspiration
+
+## Show Your Support
+
+Give a ⭐️ if you liked this project!
 
 ---
 

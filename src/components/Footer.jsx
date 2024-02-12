@@ -9,7 +9,7 @@ const { Title } = Typography;
 const Footer = () => {
   return (
     <>
-      <div className="footer">
+      <div className="footer alignment">
         <Space>
           <Link to="/" className="router-item">
             Home
