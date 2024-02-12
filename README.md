@@ -6,16 +6,6 @@ Easy Fix
   The ideal platform to find beginner-friendly issues. <br /> Designed to inspire and encourage individuals to initiate their contributions to the open source community.
 </p>
 
-<!-- <p align="center">
-  <a href="https://choosealicense.com/licenses/mit/">
-    <img src="https://img.shields.io/badge/License-MIT-brightgreen"/ >
-  </a>
-  <img src="https://img.shields.io/badge/Version-1.3.1-blue"/ >
-  ![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/78507ece-463c-417f-a3f4-b3bc8bc3114a)
-<img src="https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/78507ece-463c-417f-a3f4-b3bc8bc3114a" />
-</p>
- -->
-
 [![Preview](https://user-images.githubusercontent.com/68834718/258658579-017bd2d3-20ab-4fa5-bac4-f67d671a70ea.png)](https://easy-fix.vercel.app/)
 
 ## TechStack Used
