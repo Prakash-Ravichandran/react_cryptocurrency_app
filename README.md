@@ -11,6 +11,8 @@ Easy Fix
     <img src="https://img.shields.io/badge/License-MIT-brightgreen"/ >
   </a>
   <img src="https://img.shields.io/badge/Version-1.3.1-blue"/ >
+  ![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/78507ece-463c-417f-a3f4-b3bc8bc3114a)
+
 </p>
  -->
 
