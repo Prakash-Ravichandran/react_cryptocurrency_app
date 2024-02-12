@@ -6,8 +6,6 @@ Easy Fix
   The ideal platform to find beginner-friendly issues. <br /> Designed to inspire and encourage individuals to initiate their contributions to the open source community.
 </p>
 
-[![Preview](https://user-images.githubusercontent.com/68834718/258658579-017bd2d3-20ab-4fa5-bac4-f67d671a70ea.png)](https://easy-fix.vercel.app/)
-
 ## TechStack Used
 
 - [React.js](https://react.dev/)
