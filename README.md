@@ -16,13 +16,14 @@ Easy Fix
 
 [![Preview](https://user-images.githubusercontent.com/68834718/258658579-017bd2d3-20ab-4fa5-bac4-f67d671a70ea.png)](https://easy-fix.vercel.app/)
 
-## Built With
+## TechStack Used
 
 - [React.js](https://react.dev/)
-- [TailwindCSS](https://tailwindcss.com/)
-- [Github API](https://docs.github.com/en/rest)
-- [Vitest](https://vitest.dev/) - Testing library
-- [Iconify](https://icon-sets.iconify.design/) - Icon library
+- [Redux](https://redux-toolkit.js.org/rtk-query/overview)
+- [Ant-Design](https://ant.design/)
+- [Material-UI](https://mui.com/material-ui/)
+- [Google-Identity-services](https://console.cloud.google.com/apis/credentials/oauthclient/728562345073-fkrij7aekj2h2qgqjgsro44cjsovi4oi.apps.googleusercontent.com?authuser=1&project=react-cryptoapp)
+- [Hosting- Netlify](https://www.netlify.com/)
 
 ## Contributing
 
@@ -37,25 +38,25 @@ Remember, Good PR makes you a Good contributor !
 1. Fork this repository and clone the project
 
    ```bash
-   git clone https://github.com/<YOUR USERNAME>/easy-fix.git
+   git clone https://github.com/Prakash-Ravichandran/react_cryptocurrency_app
    ```
 
 2. Go to the project directory
 
    ```bash
-   cd easy-fix
+   cd react_cryptocurrency_app
    ```
 
 3. Install dependencies
 
    ```bash
-   yarn
+   npm install
    ```
 
 4. Start the server
 
    ```bash
-   yarn dev
+   npm start
    ```
 
 - To change the **configuration**, edit `src/lib/utils/config.js`
@@ -68,16 +69,18 @@ Remember, Good PR makes you a Good contributor !
 
 ### User Stories
 
-- As a user, I want to be able to find easy issues with labels like `good-first-issue` and `easy`.
-- As a user, I want to filter issues based on programming languages.
-- As a user, I want to view the labels associated with a specific issue.
-- As a user, I want to view key information about the repository related to a specific issue.
+- As a user, I want to be able to navigate to all routes(sidebars) & view all the components.
+- As a user, I want to search cryptocurrencies like Bitcoin & view them in detail in `Cryptocurrencies Component`.
+- As a user, I want to filter the exchange the currency with amother currency in `Exchange component`.
+- As a user, I want to filter the news based on the country in `News Component`.
+- As a user, I want to submit the feeback in a form in the `Contact Component`.
 
 ### Features
 
-- **Data Fetching:** App fetches the relevant issues from api.
-- **Pagination:** App renders the specific number of issues per page.
-- **Filter:** App fetches the required issues according to the selected language.
+- **Google Identity Services** users can able to login using their own gmail Id.
+- **Data Fetching:** App fetches the relevant data from coinranking, exchanges, news API's.
+- **Search:** App renders the specific number of data per search.
+- **Dropdown:** App fetches the required issues according to the selected dropdowns.
 
 ### Work Flow
 
