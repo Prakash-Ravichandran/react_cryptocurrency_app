@@ -101,7 +101,13 @@ const App = () => {
                     <Route
                       exact
                       path="/signout"
-                      element={<Signout setToken={setToken} />}
+                      element={
+                        <Signout
+                          setToken={setToken}
+                          user={user}
+                          setUser={setUser}
+                        />
+                      }
                     ></Route>
                     {/* <Route exact path="/login" element={<Login />}></Route> */}
                   </Routes>
