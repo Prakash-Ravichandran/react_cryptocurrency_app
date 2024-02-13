@@ -79,7 +79,7 @@ Remember, Good PR makes you a Good contributor !
 
 ![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/6e8cc066-f828-4b38-ac05-fbc51e8080b1)
 
-## Crpptocurrencies
+## Crpytocurrencies
 
 ![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/d424a546-aa37-4faf-8cd2-af71703714d8)
 
@@ -91,7 +91,9 @@ Remember, Good PR makes you a Good contributor !
 
 ![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/aa110bc5-d41e-4162-b8be-39c0ba0c3aa3)
 
-![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/aa110bc5-d41e-4162-b8be-39c0ba0c3aa3)
+## Contact
+
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/bf74cbce-b777-42fa-809e-09b18f727f63)
 
 ## Signout
 
