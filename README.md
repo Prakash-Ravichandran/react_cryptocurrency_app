@@ -90,23 +90,19 @@ Remember, Good PR makes you a Good contributor !
 
 ## Contact
 
-- Discord - [https://discord.gg/St2dHg9YwA](https://discord.gg/St2dHg9YwA)
-- Website - [vatsalsinghkv.vercel.app](https://vatsalsinghkv.vercel.app)
-- Github - [@vatsalsinghkv](https://github.com/vatsalsinghkv)
-- LinkedIn - [@vatsalsinghkv](https://www.linkedin.com/in/vatsalsinghkv/)
-- Twitter - [@vatsalsinghkv](https://www.twitter.com/vatsalsinghkv)
-- Instagram - [@vatsalsinghkv](https://www.instagram.com/vatsalsinghkv)
+- Github - [@Prakash-Ravichandran](https://github.com/Prakash-Ravichandran)
+- LinkedIn - [@prakash-ravichandran](https://www.linkedin.com/in/prakash-ravichandran/)
+- Twitter - [@dev_hustler](https://twitter.com/dev_hustler)
 
 ## Acknowledgements
-
-- [https://goodfirstissue.dev/](https://goodfirstissue.dev/) - Design Inspiration
-- [https://brittanychiang.com/](https://brittanychiang.com/) - Design Inspiration
 
 ## Show Your Support
 
 Give a ⭐️ if you liked this project!
 
 ---
+
+## Errors Fixed
 
 ### Exchanges API map fix
 
