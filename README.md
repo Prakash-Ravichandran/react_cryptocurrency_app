@@ -68,12 +68,16 @@ Remember, Good PR makes you a Good contributor !
 ### Features
 
 - **Google Identity Services** users can able to login using their own gmail Id.
+- **Mock Server for Login** Users can able to login with credentials after running the auth server in local.
 - **Data Fetching:** App fetches the relevant data from coinranking, exchanges, news API's.
 - **Search:** App renders the specific number of data per search.
 - **Dropdown:** App fetches the required issues according to the selected dropdowns.
--
 
 ### Screenshots
+
+## Login
+
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/0908c711-7a0e-4adb-807c-393822b765ec)
 
 ## HomePage
 
@@ -82,6 +86,10 @@ Remember, Good PR makes you a Good contributor !
 ## Crpytocurrencies
 
 ![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/d424a546-aa37-4faf-8cd2-af71703714d8)
+
+## Cryptodetails
+
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/d1366fdb-1dc3-494b-ad84-df7c6aab1d21)
 
 ## Exchange
 
@@ -103,17 +111,11 @@ Remember, Good PR makes you a Good contributor !
 
 [![Easy Fix work flow diagram](https://user-images.githubusercontent.com/68834718/258657790-fd1b7ba5-2171-4b51-b49a-afefaa68b9c5.png)](https://lucid.app/lucidchart/e6e01616-e79e-4819-bc64-a23cbbe53944/edit?viewport_loc=-412%2C-279%2C2727%2C1582%2C0_0&invitationId=inv_f6a6111b-2916-409c-8bb6-53ce6a182e44)
 
-### Routes
+### API Services used
 
-![Home Page](/images/Home_Screen.png?raw=true "Optional Title")
-
-![Home Page](/relative/path/to/img.jpg?raw=true "Optional Title")
-
-## Continuous Development
-
-- [ ] Add more filters such as filter by labels.
-- [ ] Migrate to typescript
-- [ ] Add test cases
+- **Coinranking** - [Coinranking](https://coinranking1.p.rapidapi.com)
+- **COinbase** - [Exchange](https://api.coinbase.com/v2/exchange-rates)
+- **Gnews** - [News](https://gnews.io/api/v4/top-headlines)
 
 ## Current Contributors
 
