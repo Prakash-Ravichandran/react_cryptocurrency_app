@@ -67,11 +67,11 @@ Remember, Good PR makes you a Good contributor !
 
 ### Features
 
-- **Google Identity Services** users can able to login using their own gmail Id.
-- **Mock Server for Login** Users can able to login with credentials after running the auth server in local.
-- **Data Fetching:** App fetches the relevant data from coinranking, exchanges, news API's.
-- **Search:** App renders the specific number of data per search.
-- **Dropdown:** App fetches the required issues according to the selected dropdowns.
+- **Google Identity Services:** users can able to login using their own gmail Id.
+- **Mock Server for Login:** Users can able to login with credentials after running the auth server in local.
+- **Data Fetching:** App fetches the relevant cryptocurrencies from coinranking, exchanges, news API's.
+- **Search:** App renders the specific number of cryptocurrencies per search.
+- **Dropdown:** App fetches the required cryptocurrencies according to the selected dropdowns.
 
 ### Screenshots
 
