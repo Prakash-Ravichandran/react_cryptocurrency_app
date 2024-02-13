@@ -49,12 +49,6 @@ Remember, Good PR makes you a Good contributor !
    npm start
    ```
 
-- To change the **configuration**, edit `src/lib/utils/config.js`
-
-### 2. Contributing Guidelines
-
-- [Contributing Guidelines](/CONTRIBUTING.md) to be followed.
-
 ## The Process
 
 ### User Stories
@@ -107,10 +101,6 @@ Remember, Good PR makes you a Good contributor !
 
 ![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/138907cb-0e62-4bf5-85c5-cb5631b81a76)
 
-### Work Flow
-
-[![Easy Fix work flow diagram](https://user-images.githubusercontent.com/68834718/258657790-fd1b7ba5-2171-4b51-b49a-afefaa68b9c5.png)](https://lucid.app/lucidchart/e6e01616-e79e-4819-bc64-a23cbbe53944/edit?viewport_loc=-412%2C-279%2C2727%2C1582%2C0_0&invitationId=inv_f6a6111b-2916-409c-8bb6-53ce6a182e44)
-
 ### API Services used
 
 - **Coinranking** - [Coinranking](https://coinranking1.p.rapidapi.com)
@@ -128,8 +118,6 @@ Remember, Good PR makes you a Good contributor !
 - Github - [@Prakash-Ravichandran](https://github.com/Prakash-Ravichandran)
 - LinkedIn - [@prakash-ravichandran](https://www.linkedin.com/in/prakash-ravichandran/)
 - Twitter - [@dev_hustler](https://twitter.com/dev_hustler)
-
-## Acknowledgements
 
 ## Show Your Support
 
