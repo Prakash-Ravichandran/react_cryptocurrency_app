@@ -76,6 +76,12 @@ Remember, Good PR makes you a Good contributor !
 
 [![Easy Fix work flow diagram](https://user-images.githubusercontent.com/68834718/258657790-fd1b7ba5-2171-4b51-b49a-afefaa68b9c5.png)](https://lucid.app/lucidchart/e6e01616-e79e-4819-bc64-a23cbbe53944/edit?viewport_loc=-412%2C-279%2C2727%2C1582%2C0_0&invitationId=inv_f6a6111b-2916-409c-8bb6-53ce6a182e44)
 
+### Routes
+
+![Home Page](/images/Home_Screen.png?raw=true "Optional Title")
+
+![Home Page](/relative/path/to/img.jpg?raw=true "Optional Title")
+
 ## Continuous Development
 
 - [ ] Add more filters such as filter by labels.
