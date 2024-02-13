@@ -6,18 +6,6 @@ CRYPTOMARKETS
   The ideal platform to find different crypto currencies & their exchanges. <br /> Designed to inspire and encourage individuals to initiate their contributions to the open source community.
 </p>
 
-![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/6e8cc066-f828-4b38-ac05-fbc51e8080b1)
-
-![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/d424a546-aa37-4faf-8cd2-af71703714d8)
-
-![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/48b7ee63-63fa-4cf3-85ee-392deeb16469)
-
-![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/aa110bc5-d41e-4162-b8be-39c0ba0c3aa3)
-
-![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/aa110bc5-d41e-4162-b8be-39c0ba0c3aa3)
-
-![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/138907cb-0e62-4bf5-85c5-cb5631b81a76)
-
 ## TechStack Used
 
 - [React.js](https://react.dev/)
@@ -83,6 +71,31 @@ Remember, Good PR makes you a Good contributor !
 - **Data Fetching:** App fetches the relevant data from coinranking, exchanges, news API's.
 - **Search:** App renders the specific number of data per search.
 - **Dropdown:** App fetches the required issues according to the selected dropdowns.
+-
+
+### Screenshots
+
+## HomePage
+
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/6e8cc066-f828-4b38-ac05-fbc51e8080b1)
+
+## Crpptocurrencies
+
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/d424a546-aa37-4faf-8cd2-af71703714d8)
+
+## Exchange
+
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/48b7ee63-63fa-4cf3-85ee-392deeb16469)
+
+## News
+
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/aa110bc5-d41e-4162-b8be-39c0ba0c3aa3)
+
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/aa110bc5-d41e-4162-b8be-39c0ba0c3aa3)
+
+## Signout
+
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/138907cb-0e62-4bf5-85c5-cb5631b81a76)
 
 ### Work Flow
 
