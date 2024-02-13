@@ -61,6 +61,12 @@ CRYPTOMARKETS
 - **Search:** App renders the specific number of cryptocurrencies per search.
 - **Dropdown:** App fetches the required cryptocurrencies according to the selected dropdowns.
 
+### API Services used
+
+- **Coinranking** - [Coinranking](https://coinranking1.p.rapidapi.com)
+- **COinbase** - [Exchange](https://api.coinbase.com/v2/exchange-rates)
+- **Gnews** - [News](https://gnews.io/api/v4/top-headlines)
+
 ### Screenshots
 
 ## Login
@@ -94,12 +100,6 @@ CRYPTOMARKETS
 ## Signout
 
 ![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/138907cb-0e62-4bf5-85c5-cb5631b81a76)
-
-### API Services used
-
-- **Coinranking** - [Coinranking](https://coinranking1.p.rapidapi.com)
-- **COinbase** - [Exchange](https://api.coinbase.com/v2/exchange-rates)
-- **Gnews** - [News](https://gnews.io/api/v4/top-headlines)
 
 ## Current Contributors
 
