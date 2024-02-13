@@ -6,6 +6,24 @@ CRYPTOMARKETS
   The ideal platform to find different crypto currencies & their exchanges. <br /> Designed to inspire and encourage individuals to initiate their contributions to the open source community.
 </p>
 
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/4d5dc469-5158-479d-9f67-fc4f045a27f2)
+
+
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/6e8cc066-f828-4b38-ac05-fbc51e8080b1)
+
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/d424a546-aa37-4faf-8cd2-af71703714d8)
+
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/48b7ee63-63fa-4cf3-85ee-392deeb16469)
+
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/aa110bc5-d41e-4162-b8be-39c0ba0c3aa3)
+
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/138907cb-0e62-4bf5-85c5-cb5631b81a76)
+
+
+
+![image](https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/aa110bc5-d41e-4162-b8be-39c0ba0c3aa3)
+
+
 ## TechStack Used
 
 - [React.js](https://react.dev/)
