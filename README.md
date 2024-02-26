@@ -6,6 +6,9 @@ CRYPTOMARKETS
   The ideal platform to find different crypto currencies & their exchanges. <br /> Designed to inspire and encourage individuals to initiate their contributions to the open source community.
 </p>
 
+## Video Demo
+https://github.com/Prakash-Ravichandran/react_cryptocurrency_app/assets/74542543/66d19de1-ccb9-4ca4-b19d-1cd14ae79335
+
 ## TechStack Used
 
 - [React.js](https://react.dev/)
